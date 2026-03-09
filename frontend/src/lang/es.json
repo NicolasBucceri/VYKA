@@ -1,0 +1,158 @@
+{
+  "navbar": {
+    "homeAria": "Ir al inicio",
+    "toggleAria": "Abrir menú",
+    "closeAria": "Cerrar menú",
+
+    "inicio": "Inicio",
+    "servicios": "Servicios",
+    "proyectos": "Proyectos",
+    "empresa": "Empresa",
+    "contacto": "Contacto",
+
+    "langAria": "Cambiar idioma"
+  },
+    "hero": {
+    "subtitle": "Desarrollamos experiencias digitales",
+    "titleLine1": "QUE IMPULSAN EL",
+    "titleAccent": "CRECIMIENTO DE TU NEGOCIO",
+    "cta": "Hablemos de tu proyecto"
+  },
+  "intro": {
+  "eyebrow": "INTRO",
+  "title": "LA CALIDAD SE DISEÑA DESDE EL INICIO",
+  "subtitleLine": "Tu presencia define tu lugar en el",
+  "subtitleAccent": "mundo digital",
+  "desc": "Pensamos, estructuramos y ejecutamos con método y precisión, para que tu marca no solo esté presente, sino que destaque y compita a nivel global.",
+  "ctaMetodo": "Conocer el método",
+  "ctaProyectos": "Ver proyectos",
+  "ariaMetodo": "Conocer el método",
+  "ariaProyectos": "Ver proyectos"
+ },
+ "metodo": {
+  "aria": "Nuestro método de trabajo",
+  "title": "NUESTRO MÉTODO DE TRABAJO",
+
+  "steps": [
+    {
+      "label": "PASO 1",
+      "title": "Diagnóstico inicial",
+      "text": "Analizamos tu negocio y necesidades.",
+      "mediaFoot": "Análisis inicial."
+    },
+    {
+      "label": "PASO 2",
+      "title": "Estrategia",
+      "text": "Definimos estructura y objetivos.",
+      "mediaFoot": "Estrategia UX."
+    },
+    {
+      "label": "PASO 3",
+      "title": "Diseño UX/UI",
+      "text": "Creamos una interfaz clara y moderna.",
+      "mediaFoot": "Diseño visual."
+    },
+    {
+      "label": "PASO 4",
+      "title": "Desarrollo",
+      "text": "Construimos la solución optimizada.",
+      "mediaFoot": "Código limpio."
+    },
+    {
+      "label": "PASO 5",
+      "title": "Optimización",
+      "text": "Ajustamos performance y SEO.",
+      "mediaFoot": "Optimización."
+    },
+    {
+      "label": "PASO 6",
+      "title": "Lanzamiento",
+      "text": "Publicamos y monitoreamos.",
+      "mediaFoot": "Deploy final."
+    }
+  ]
+ },
+ "faq": {
+  "titleLine": "Todo lo que necesitás saber",
+  "titleAccent": "antes de empezar",
+
+  "subAccent": "Cómo trabajamos, tiempos y qué incluye cada plan en VYKA.",
+  "subRest": " Transparencia total para tu próximo proyecto digital.",
+
+  "items": [
+    {
+      "title": "¿El pago es único o mensual?",
+      "content": "Sí, el pago es único por el desarrollo inicial. Una vez finalizado el proyecto, el sitio es tuyo sin mensualidades obligatorias. Solo pagás por lo que necesitás cuando lo necesitás."
+    },
+    {
+      "title": "¿Puedo escalar mi plan luego?",
+      "content": "Sí. Podés empezar con un plan y luego escalar a uno superior cuando tu negocio lo requiera. La estructura queda preparada para crecer sin rehacer todo desde cero."
+    },
+    {
+      "title": "¿Cuál es el tiempo de entrega?",
+      "content": "Depende del alcance y del plan, pero normalmente trabajamos en rangos de 7 a 20 días hábiles. Te confirmamos un timeline claro antes de iniciar."
+    },
+    {
+      "title": "¿Tengo soporte técnico post-entrega?",
+      "content": "Sí. Incluimos soporte post-entrega para ajustes y dudas iniciales. Si luego querés mantenimiento continuo o mejoras, lo armamos como un plan opcional."
+    }
+  ],
+
+  "cta": {
+    "title": "¿TENÉS MÁS DUDAS?",
+    "subLine1": "Te ayudamos a definir el mejor camino para tu proyecto.",
+    "subLine2": "Nuestro equipo está listo para asesorarte sin compromiso.",
+    "btnPrimary": "Iniciar diagnóstico",
+    "btnSecondary": "Contactar soporte"
+  }
+ },
+ "proyectosHome": {
+  "aria": "Proyectos seleccionados",
+  "kicker": "PROYECTOS SELECCIONADOS",
+  "titleLine1": "CASOS DE ÉXITO QUE",
+  "titleLine2": "HABLAN POR NOSOTROS",
+  "cta": "Explorar más proyectos",
+  "cardBtn": "Saber más",
+
+  "items": {
+    "plego": {
+      "tipo": "WEB DE PRESENTACIÓN",
+      "nombre": "Plego",
+      "desc": "Sitio desarrollado para transmitir una imagen sólida y profesional."
+    },
+    "baviera": {
+      "tipo": "WEB INSTITUCIONAL",
+      "nombre": "Baviera",
+      "desc": "Landing page enfocada en presentar marca y facilitar el contacto."
+    },
+    "fralo": {
+      "tipo": "WEB INSTITUCIONAL",
+      "nombre": "Fralo Construcciones",
+      "desc": "Web institucional diseñada para mejorar la presencia digital del negocio."
+    }
+  }
+ },
+ "nosotros": {
+  "ctaBanner": {
+    "aria": "Iniciar diagnóstico",
+    "titleLine1": "SI TU MARCA NECESITA NIVEL,",
+    "titleLine2": "NECESITA SISTEMA.",
+    "button": "Iniciar diagnóstico"
+  }
+ },
+ "nosotrosCard": {
+  "kicker": "NOSOTROS",
+  "title": {
+    "line1": "UN EQUIPO REAL,",
+    "line2": "UN PROCESO",
+    "line3": "TRANSPARENTE."
+  },
+  "text": {
+    "p1a": "En",
+    "brand": "VYKA",
+    "p1b": "diseñamos y desarrollamos soluciones digitales enfocadas en resultados reales.",
+    "p2": "Trabajamos de forma directa con cada cliente, entendiendo su negocio para crear experiencias claras, funcionales y alineadas a sus objetivos."
+  },
+  "button": "Saber más"
+ }
+}

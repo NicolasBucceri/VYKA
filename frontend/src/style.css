@@ -1,0 +1,117 @@
+:root {
+  /* =========================
+     DISEÑO WEB — VYKA
+     Moderna - Elegante - Oscura (dark-first) - Minimal - Tecnológica
+  ========================= */
+
+  /* =========================
+     🎨 PALETA BASE
+  ========================= */
+  --vyka-bg: #0C0C11;
+  --vyka-surface: rgba(255, 255, 255, 0.03);
+  --vyka-border: rgba(255, 255, 255, 0.08);
+
+  --vyka-text: #FFFFFF;
+  --vyka-muted: #B4B4B4;
+
+  /* =========================
+     🌈 ACCENT (IDENTIDAD)
+  ========================= */
+  --vyka-accent-1: #6D5DF6;
+  --vyka-accent-2: #2D8CFF;
+
+  --vyka-gradient: linear-gradient(
+    90deg,
+    var(--vyka-accent-1) 0%,
+    var(--vyka-accent-2) 100%
+  );
+
+  --vyka-glow: 0 0 40px rgba(109, 93, 246, 0.25);
+
+  /* =========================
+     🔤 TIPOGRAFÍA (ACTUALIZADA)
+  ========================= */
+  --font-title: "Average Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Roboto Flex", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Weights (consistentes) */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* =========================
+     📏 TAMAÑOS TIPOGRÁFICOS
+     (mantenés tus px para no romper estilos)
+  ========================= */
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 28px;
+  --fs-xxl: 42px;
+
+  /* Line-height recomendado (para que se lea premium) */
+  --lh-tight: 1.15;
+  --lh-normal: 1.5;
+
+  /* Tracking (títulos con aire) */
+  --ls-title: 0.04em;
+  --ls-ui: 0.02em;
+
+  /* =========================
+     🔲 RADIOS
+  ========================= */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* =========================
+     🌑 SOMBRAS
+  ========================= */
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.35);
+  --shadow-card: 0 8px 25px rgba(0,0,0,0.25);
+
+  /* =========================
+     📐 LAYOUT
+  ========================= */
+  --container: 1200px;
+  --gap: 18px;
+
+  /* =========================
+     ⚡ TRANSICIONES
+  ========================= */
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --t-fast: 180ms;
+  --t-mid: 280ms;
+
+  /* =========================
+     🎯 FOCUS (accesibilidad)
+  ========================= */
+  --focus: 0 0 0 3px rgba(109, 93, 246, 0.35);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-normal);
+  color: var(--vyka-text);
+  background: var(--vyka-bg);
+}
+
+h1, h2, h3, .title {
+  font-family: var(--font-title);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-title);
+  line-height: var(--lh-tight);
+}
+
+p, a, li, span, button, input, textarea, .ui-text {
+  font-family: var(--font-body);
+}
+
+button {
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-ui);
+}

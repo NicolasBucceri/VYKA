@@ -1,0 +1,157 @@
+{
+  "navbar": {
+    "homeAria": "Go to home",
+    "toggleAria": "Open menu",
+    "closeAria": "Close menu",
+    "inicio": "Home",
+    "servicios": "Services",
+    "proyectos": "Projects",
+    "empresa": "About",
+    "contacto": "Contact",
+    "langAria": "Change language"
+  },
+
+  "hero": {
+    "subtitle": "We craft digital experiences",
+    "titleLine1": "THAT BOOST THE",
+    "titleAccent": "GROWTH OF YOUR BUSINESS",
+    "cta": "Let’s talk about your project"
+  },
+  "intro": {
+  "eyebrow": "INTRO",
+  "title": "QUALITY IS DESIGNED FROM THE BEGINNING",
+  "subtitleLine": "Your presence defines your place in the",
+  "subtitleAccent": "digital world",
+  "desc": "We think, structure and execute with method and precision so your brand is not only present, but stands out and competes globally.",
+  "ctaMetodo": "Discover the method",
+  "ctaProyectos": "View projects",
+  "ariaMetodo": "Discover the method",
+  "ariaProyectos": "View projects"
+ },
+ "metodo": {
+  "aria": "Our workflow method",
+  "title": "OUR WORKFLOW METHOD",
+
+  "steps": [
+    {
+      "label": "STEP 1",
+      "title": "Initial diagnosis",
+      "text": "We analyze your business and needs.",
+      "mediaFoot": "Initial analysis."
+    },
+    {
+      "label": "STEP 2",
+      "title": "Strategy",
+      "text": "We define structure and objectives.",
+      "mediaFoot": "UX strategy."
+    },
+    {
+      "label": "STEP 3",
+      "title": "UX/UI Design",
+      "text": "We craft a clear, modern interface.",
+      "mediaFoot": "Visual design."
+    },
+    {
+      "label": "STEP 4",
+      "title": "Development",
+      "text": "We build an optimized solution.",
+      "mediaFoot": "Clean code."
+    },
+    {
+      "label": "STEP 5",
+      "title": "Optimization",
+      "text": "We refine performance and SEO.",
+      "mediaFoot": "Optimization."
+    },
+    {
+      "label": "STEP 6",
+      "title": "Launch",
+      "text": "We publish and monitor results.",
+      "mediaFoot": "Final deploy."
+    }
+  ]
+ },
+ "faq": {
+  "titleLine": "Everything you need to know",
+  "titleAccent": "before we start",
+
+  "subAccent": "How we work, timelines, and what each VYKA plan includes.",
+  "subRest": " Full transparency for your next digital project.",
+
+  "items": [
+    {
+      "title": "Is the payment one-time or monthly?",
+      "content": "It’s a one-time payment for the initial development. Once the project is delivered, the site is yours with no mandatory monthly fees. You only pay for what you need, when you need it."
+    },
+    {
+      "title": "Can I upgrade my plan later?",
+      "content": "Yes. You can start with one plan and upgrade when your business requires it. The structure is prepared to scale without rebuilding everything from scratch."
+    },
+    {
+      "title": "What’s the delivery time?",
+      "content": "It depends on scope and plan, but we typically deliver within 7 to 20 business days. We confirm a clear timeline before starting."
+    },
+    {
+      "title": "Do I get post-delivery support?",
+      "content": "Yes. We include post-delivery support for initial tweaks and questions. If you later want ongoing maintenance or improvements, we can offer it as an optional plan."
+    }
+  ],
+
+  "cta": {
+    "title": "STILL HAVE QUESTIONS?",
+    "subLine1": "We’ll help you choose the best path for your project.",
+    "subLine2": "Our team is ready to advise you with no commitment.",
+    "btnPrimary": "Start diagnosis",
+    "btnSecondary": "Contact support"
+  }
+ },
+ "proyectosHome": {
+  "aria": "Selected projects",
+  "kicker": "SELECTED PROJECTS",
+  "titleLine1": "SUCCESS STORIES THAT",
+  "titleLine2": "SPEAK FOR US",
+  "cta": "Explore more projects",
+  "cardBtn": "Learn more",
+
+  "items": {
+    "plego": {
+      "tipo": "SHOWCASE WEBSITE",
+      "nombre": "Plego",
+      "desc": "A website built to convey a solid, professional brand image."
+    },
+    "baviera": {
+      "tipo": "INSTITUTIONAL WEBSITE",
+      "nombre": "Baviera",
+      "desc": "A landing page focused on presenting the brand and simplifying contact."
+    },
+    "fralo": {
+      "tipo": "INSTITUTIONAL WEBSITE",
+      "nombre": "Fralo Construcciones",
+      "desc": "An institutional website designed to strengthen the business’s digital presence."
+    }
+  }
+ },
+ "nosotros": {
+  "ctaBanner": {
+    "aria": "Start diagnosis",
+    "titleLine1": "IF YOUR BRAND NEEDS LEVEL,",
+    "titleLine2": "IT NEEDS A SYSTEM.",
+    "button": "Start diagnosis"
+  }
+ },
+ "nosotrosCard": {
+  "kicker": "ABOUT US",
+  "title": {
+    "line1": "A REAL TEAM,",
+    "line2": "A",
+    "line3": "TRANSPARENT PROCESS."
+  },
+  "text": {
+    "p1a": "At",
+    "brand": "VYKA",
+    "p1b": "we design and build digital solutions focused on real results.",
+    "p2": "We work directly with each client, understanding their business to create clear, functional experiences aligned with their goals."
+  },
+  "button": "Learn more"
+ }
+}
