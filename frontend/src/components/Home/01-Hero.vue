@@ -39,16 +39,10 @@ const { t } = useLang();
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap");
 
 /* ✅ Average Sans (si la tenés) */
-@font-face {
-  font-family: "Average Sans";
-  src: url("@/assets/fonts/AverageSans.woff2") format("woff2");
-  font-display: swap;
-}
+
 
 /* 🔥 IMPORTANTE: variables globales (fix scoped) */
 :global(:root) {
-  --font-title: "Average Sans", "Inter", system-ui, -apple-system, "Segoe UI",
-    Roboto, Arial, sans-serif;
   --font-body: "Roboto Flex", system-ui, -apple-system, "Segoe UI", Roboto,
     Arial, sans-serif;
   --font-accent: "Space Grotesk", "Inter", sans-serif;
