@@ -2,7 +2,7 @@
   <section class="hero">
     <!-- 🎥 Video -->
     <video class="hero-video" autoplay muted loop playsinline>
-      <source src="@/assets/hero/VideoHero.mp4" type="video/mp4" />
+      <source src="@/assets/Hero/VideoHero.mp4" type="video/mp4" />
     </video>
 
     <!-- 🌑 Overlay -->
@@ -23,7 +23,7 @@
     </div>
   </section>
 </template>
-
+ <!-- ashahsahsahsashashashashasahsahsahsahsahsahsahsahsas -->
 <script setup>
 import { useLang } from "@/composables/useLang";
 import ButtonPrimary from "@/components/ui/BotonPrimario.vue";
