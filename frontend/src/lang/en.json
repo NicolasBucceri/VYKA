@@ -238,7 +238,75 @@
   "planLabel": "Plan",
   "desde": "From",
   "monedaARS": "ARS",
-  "monedaUSD": "USD"
+  "monedaUSD": "USD",
+  "items": [
+    {
+      "plan": 1,
+      "slug": "diseno-web-economico",
+      "titulo": "Affordable Web Design",
+      "precioARS": 350000,
+      "precioUSD": 350,
+      "features": [
+        "Custom professional website design",
+        "Up to 5 custom sections",
+        "Mobile-optimized responsive layout",
+        "WhatsApp and social media integration"
+      ]
+    },
+    {
+      "plan": 2,
+      "slug": "diseno-web-profesional",
+      "titulo": "Professional Web Design",
+      "precioARS": 550000,
+      "precioUSD": 550,
+      "recomendado": true,
+      "features": [
+        "Custom professional UX/UI design",
+        "Self-manageable CMS panel",
+        "Forms and lead generation setup",
+        "Optimized structural SEO"
+      ]
+    },
+    {
+      "plan": 3,
+      "slug": "ecommerce-profesional",
+      "titulo": "Professional E-commerce",
+      "precioARS": 850000,
+      "precioUSD": 850,
+      "features": [
+        "Self-manageable online store",
+        "Optimized cart and checkout flow",
+        "Integrated payments and shipping",
+        "Product and order management"
+      ]
+    },
+    {
+      "plan": 4,
+      "slug": "corporativo-sistemas-a-medida",
+      "titulo": "Corporate & Custom Systems",
+      "precioARS": 1800000,
+      "precioUSD": 1800,
+      "features": [
+        "Custom website and system development",
+        "Personalized admin panel",
+        "User and permission management",
+        "Scalable architecture ready to grow"
+      ]
+    },
+    {
+      "plan": 5,
+      "slug": "rediseno-rehacer-web",
+      "titulo": "Web Redesign & Optimization",
+      "precioARS": 450000,
+      "precioUSD": 450,
+      "features": [
+        "Full audit of your current website",
+        "Modern UX/UI redesign",
+        "Speed and SEO optimization",
+        "Secure content migration"
+      ]
+    }
+  ]
 },
 
 "planesDetalle": [
