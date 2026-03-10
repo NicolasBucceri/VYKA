@@ -21,23 +21,10 @@
 
         <!-- Grid -->
         <div class="projectsGrid" role="list">
-          <button
-            v-for="p in proyectos"
-            :key="p.slug"
-            class="projectCard"
-            type="button"
-            role="listitem"
-            :aria-label="`Abrir proyecto ${p.nombre}`"
-            @click="abrirProyecto(p)"
-          >
-            <img
-              class="projectMedia"
-              :src="p.imagen"
-              :alt="`Preview de ${p.nombre}`"
-              :style="{ objectPosition: p.focus || '50% 25%' }"
-              loading="lazy"
-              decoding="async"
-            />
+          <button v-for="p in proyectos" :key="p.slug" class="projectCard" type="button" role="listitem"
+            :aria-label="`Abrir proyecto ${p.nombre}`" @click="abrirProyecto(p)">
+            <img class="projectMedia" :src="p.imagen" :alt="`Preview de ${p.nombre}`"
+              :style="{ objectPosition: p.focus || '50% 25%' }" loading="lazy" decoding="async" />
 
             <div class="projectOverlay" aria-hidden="true"></div>
 
@@ -77,12 +64,26 @@ const abrirProyecto = (p) => {
 
 <style scoped>
 /* tu CSS EXACTO tal cual lo tenías (no lo toco) */
-.proyectos { padding: clamp(82px, 8vw, 120px) 0; }
-.wrap { width: min(1400px, 92%); margin: 0 auto; }
-.head { margin-bottom: clamp(22px, 3vw, 38px); }
-.headCenter { text-align: center; display: grid; justify-items: center; }
+.proyectos {
+  padding: clamp(82px, 8vw, 120px) 0;
+}
 
-.kicker{
+.wrap {
+  width: min(1400px, 92%);
+  margin: 0 auto;
+}
+
+.head {
+  margin-bottom: clamp(22px, 3vw, 38px);
+}
+
+.headCenter {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
+
+.kicker {
   letter-spacing: 0.22em;
   font-size: 12px;
   font-weight: 800;
@@ -91,10 +92,10 @@ const abrirProyecto = (p) => {
   color: rgba(255, 255, 255, 0.72);
   transform: translateY(6px);
   opacity: 0;
-  animation: fadeUp 700ms cubic-bezier(.2,.8,.2,1) 80ms forwards;
+  animation: fadeUp 700ms cubic-bezier(.2, .8, .2, 1) 80ms forwards;
 }
 
-.title{
+.title {
   margin: 0;
   font-size: clamp(28px, 3.4vw, 48px);
   line-height: 1.05;
@@ -102,17 +103,17 @@ const abrirProyecto = (p) => {
   color: rgba(255, 255, 255, 0.92);
   transform: translateY(10px);
   opacity: 0;
-  animation: fadeUp 820ms cubic-bezier(.2,.8,.2,1) 140ms forwards;
+  animation: fadeUp 820ms cubic-bezier(.2, .8, .2, 1) 140ms forwards;
 }
 
-.grad{
+.grad {
   background: linear-gradient(90deg, #6d5df6, #2d8cff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.subTriad{
+.subTriad {
   margin: 36px 0 0;
   text-align: center;
   font-size: 14px;
@@ -123,12 +124,17 @@ const abrirProyecto = (p) => {
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   transform: translateY(10px);
   opacity: 0;
-  animation: fadeUp 900ms cubic-bezier(.2,.8,.2,1) 220ms forwards;
+  animation: fadeUp 900ms cubic-bezier(.2, .8, .2, 1) 220ms forwards;
 }
 
-.dot{ display: inline-block; margin: 0 10px; opacity: 0.45; transform: translateY(-1px); }
+.dot {
+  display: inline-block;
+  margin: 0 10px;
+  opacity: 0.45;
+  transform: translateY(-1px);
+}
 
-.projectsGrid{
+.projectsGrid {
   display: grid;
   gap: clamp(18px, 2vw, 24px);
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -138,11 +144,13 @@ const abrirProyecto = (p) => {
   margin-top: clamp(18px, 2.2vw, 28px);
 }
 
-@media (min-width: 1101px){
-  .projectsGrid .projectCard:nth-child(4):last-child { grid-column: 2; }
+@media (min-width: 1101px) {
+  .projectsGrid .projectCard:nth-child(4):last-child {
+    grid-column: 2;
+  }
 }
 
-.projectCard{
+.projectCard {
   position: relative;
   display: block;
   width: 100%;
@@ -164,28 +172,39 @@ const abrirProyecto = (p) => {
   z-index: 0;
   transform: translateY(14px);
   opacity: 0;
-  animation: cardIn 900ms cubic-bezier(.2,.8,.2,1) forwards;
+  animation: cardIn 900ms cubic-bezier(.2, .8, .2, 1) forwards;
 }
 
-.projectCard:nth-child(1){ animation-delay: 120ms; }
-.projectCard:nth-child(2){ animation-delay: 180ms; }
-.projectCard:nth-child(3){ animation-delay: 240ms; }
-.projectCard:nth-child(4){ animation-delay: 300ms; }
+.projectCard:nth-child(1) {
+  animation-delay: 120ms;
+}
 
-.projectCard::after{
+.projectCard:nth-child(2) {
+  animation-delay: 180ms;
+}
+
+.projectCard:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.projectCard:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+.projectCard::after {
   content: "";
   position: absolute;
   inset: -2px;
   border-radius: 24px;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 260ms cubic-bezier(.2,.8,.2,1);
+  transition: opacity 260ms cubic-bezier(.2, .8, .2, 1);
   background:
     radial-gradient(circle at 26% 18%, rgba(255, 255, 255, 0.10), transparent 60%),
     radial-gradient(circle at 80% 62%, rgba(255, 255, 255, 0.06), transparent 58%);
 }
 
-.projectCard::before{
+.projectCard::before {
   content: "";
   position: absolute;
   inset: -30% -15%;
@@ -193,13 +212,13 @@ const abrirProyecto = (p) => {
   opacity: 0;
   transform: translateY(18px);
   transition:
-    opacity 520ms cubic-bezier(.2,.8,.2,1),
-    transform 650ms cubic-bezier(.2,.8,.2,1);
+    opacity 520ms cubic-bezier(.2, .8, .2, 1),
+    transform 650ms cubic-bezier(.2, .8, .2, 1);
   background:
     radial-gradient(circle at 50% 115%, rgba(255, 255, 255, 0.14), transparent 58%);
 }
 
-.projectMedia{
+.projectMedia {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -208,25 +227,25 @@ const abrirProyecto = (p) => {
   display: block;
   transform: scale(1.02);
   transition:
-    transform 700ms cubic-bezier(.2,.8,.2,1),
-    filter 700ms cubic-bezier(.2,.8,.2,1);
+    transform 700ms cubic-bezier(.2, .8, .2, 1),
+    filter 700ms cubic-bezier(.2, .8, .2, 1);
   filter: saturate(0.98) contrast(1.05);
 }
 
-.projectOverlay{
+.projectOverlay {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(180deg, rgba(10, 10, 14, 0.40), rgba(10, 10, 14, 0.92)),
-    radial-gradient(circle at 50% 35%, rgba(255,255,255,0.05), transparent 62%);
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.05), transparent 62%);
   opacity: 0.72;
   transition:
-    opacity 520ms cubic-bezier(.2,.8,.2,1),
-    transform 520ms cubic-bezier(.2,.8,.2,1);
+    opacity 520ms cubic-bezier(.2, .8, .2, 1),
+    transform 520ms cubic-bezier(.2, .8, .2, 1);
   transform: translateY(8px);
 }
 
-.projectHover{
+.projectHover {
   position: absolute;
   inset: 0;
   display: grid;
@@ -239,21 +258,21 @@ const abrirProyecto = (p) => {
   transform: translateY(18px);
   filter: blur(10px);
   transition:
-    opacity 520ms cubic-bezier(.2,.8,.2,1),
-    transform 620ms cubic-bezier(.2,.8,.2,1),
-    filter 620ms cubic-bezier(.2,.8,.2,1);
+    opacity 520ms cubic-bezier(.2, .8, .2, 1),
+    transform 620ms cubic-bezier(.2, .8, .2, 1),
+    filter 620ms cubic-bezier(.2, .8, .2, 1);
 }
 
-.projectHoverTitle{
+.projectHoverTitle {
   margin: 0;
   font-size: clamp(24px, 2.2vw, 34px);
   font-weight: 900;
   letter-spacing: 0.01em;
   color: rgba(255, 255, 255, 0.98);
-  text-shadow: 0 18px 46px rgba(0,0,0,0.65);
+  text-shadow: 0 18px 46px rgba(0, 0, 0, 0.65);
 }
 
-.projectHoverTag{
+.projectHoverTag {
   margin: 0;
   font-size: 13px;
   letter-spacing: 0.20em;
@@ -261,7 +280,7 @@ const abrirProyecto = (p) => {
   color: rgba(255, 255, 255, 0.72);
 }
 
-.projectHoverBtn{
+.projectHoverBtn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -270,18 +289,18 @@ const abrirProyecto = (p) => {
   font-size: 13px;
   font-weight: 900;
   background: linear-gradient(90deg, #6d5df6, #2d8cff);
-  color: rgba(255,255,255,0.98);
+  color: rgba(255, 255, 255, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow:
-    0 22px 60px rgba(0,0,0,0.55),
-    0 0 0 1px rgba(255,255,255,0.06) inset;
+    0 22px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
   transition:
-    transform 240ms cubic-bezier(.2,.8,.2,1),
-    filter 240ms cubic-bezier(.2,.8,.2,1);
+    transform 240ms cubic-bezier(.2, .8, .2, 1),
+    filter 240ms cubic-bezier(.2, .8, .2, 1);
 }
 
 .projectCard:hover,
-.projectCard:focus-visible{
+.projectCard:focus-visible {
   transform: translateY(-8px);
   border-color: rgba(255, 255, 255, 0.18);
   box-shadow:
@@ -292,67 +311,117 @@ const abrirProyecto = (p) => {
 }
 
 .projectCard:hover::after,
-.projectCard:focus-visible::after{ opacity: 1; }
+.projectCard:focus-visible::after {
+  opacity: 1;
+}
 
 .projectCard:hover::before,
-.projectCard:focus-visible::before{
+.projectCard:focus-visible::before {
   opacity: 1;
   transform: translateY(-10px);
 }
 
 .projectCard:hover .projectMedia,
-.projectCard:focus-visible .projectMedia{
+.projectCard:focus-visible .projectMedia {
   transform: scale(1.12);
   filter: brightness(0.52) saturate(1.02) contrast(1.12);
 }
 
 .projectCard:hover .projectOverlay,
-.projectCard:focus-visible .projectOverlay{
+.projectCard:focus-visible .projectOverlay {
   opacity: 0.99;
   transform: translateY(0);
   background:
     linear-gradient(180deg, rgba(7, 7, 10, 0.86), rgba(7, 7, 10, 0.99)),
-    radial-gradient(circle at 50% 35%, rgba(255,255,255,0.06), transparent 62%);
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.06), transparent 62%);
 }
 
 .projectCard:hover .projectHover,
-.projectCard:focus-visible .projectHover{
+.projectCard:focus-visible .projectHover {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
 }
 
 .projectCard:hover .projectHoverBtn,
-.projectCard:focus-visible .projectHoverBtn{
+.projectCard:focus-visible .projectHoverBtn {
   transform: translateY(-2px) scale(1.01);
   filter: brightness(1.05);
 }
 
-@media (max-width: 1100px){
-  .projectsGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .projectCard{ aspect-ratio: 16 / 11; min-height: 300px; }
+@media (max-width: 1100px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projectCard {
+    aspect-ratio: 16 / 11;
+    min-height: 300px;
+  }
 }
 
-@media (max-width: 640px){
-  .projectsGrid{ grid-template-columns: 1fr; }
-  .projectCard{ aspect-ratio: 16 / 12; min-height: 260px; }
-  .subTriad{ letter-spacing: 0.18em; font-size: 11px; }
-  .dot{ margin: 0 8px; }
+@media (max-width: 640px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectCard {
+    aspect-ratio: 16 / 12;
+    min-height: 260px;
+  }
+
+  .subTriad {
+    letter-spacing: 0.18em;
+    font-size: 11px;
+  }
+
+  .dot {
+    margin: 0 8px;
+  }
 }
 
-@keyframes fadeUp{
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes cardIn{
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@media (prefers-reduced-motion: reduce){
-  .kicker, .title, .subTriad, .projectCard{ animation: none !important; opacity: 1 !important; transform: none !important; }
-  .projectCard, .projectMedia, .projectOverlay, .projectHover, .projectHoverBtn, .projectCard::before, .projectCard::after{
+@media (prefers-reduced-motion: reduce) {
+
+  .kicker,
+  .title,
+  .subTriad,
+  .projectCard {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .projectCard,
+  .projectMedia,
+  .projectOverlay,
+  .projectHover,
+  .projectHoverBtn,
+  .projectCard::before,
+  .projectCard::after {
     transition: none !important;
   }
 }

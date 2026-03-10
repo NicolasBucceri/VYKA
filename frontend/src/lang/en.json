@@ -141,11 +141,11 @@
  },
  "nosotrosCard": {
   "kicker": "ABOUT US",
-  "title": {
-    "line1": "A REAL TEAM,",
-    "line2": "A",
-    "line3": "TRANSPARENT PROCESS."
-  },
+"title": {
+  "line1": "A REAL TEAM,",
+  "line2": "A TRANSPARENT",
+  "line3": "PROCESS."
+},
   "text": {
     "p1a": "At",
     "brand": "VYKA",
@@ -153,5 +153,677 @@
     "p2": "We work directly with each client, understanding their business to create clear, functional experiences aligned with their goals."
   },
   "button": "Learn more"
- }
+ },
+ "planes": {
+  "title": "What",
+  "titleAccent": "services",
+  "titleEnd": "do we offer?",
+  "nota": "One-time investment · Your site, your control",
+  "btnMas": "Learn more",
+  "items": [
+    {
+      "plan": 1,
+      "slug": "diseno-web-economico",
+      "titulo": "Affordable Web Design",
+      "precioARS": 350000,
+      "precioUSD": 350,
+      "features": [
+        "Custom professional website design",
+        "Up to 5 custom sections",
+        "Mobile-optimized responsive layout",
+        "WhatsApp and social media integration"
+      ]
+    },
+    {
+      "plan": 2,
+      "slug": "diseno-web-profesional",
+      "titulo": "Professional Web Design",
+      "precioARS": 550000,
+      "precioUSD": 550,
+      "recomendado": true,
+      "features": [
+        "Custom professional UX/UI design",
+        "Self-manageable CMS panel",
+        "Forms and lead generation setup",
+        "Optimized structural SEO"
+      ]
+    },
+    {
+      "plan": 3,
+      "slug": "ecommerce-profesional",
+      "titulo": "Professional E-commerce",
+      "precioARS": 850000,
+      "precioUSD": 850,
+      "features": [
+        "Self-manageable online store",
+        "Optimized cart and checkout flow",
+        "Integrated payments and shipping",
+        "Product and order management"
+      ]
+    },
+    {
+      "plan": 4,
+      "slug": "corporativo-sistemas-a-medida",
+      "titulo": "Corporate & Custom Systems",
+      "precioARS": 1800000,
+      "precioUSD": 1800,
+      "features": [
+        "Custom website and system development",
+        "Personalized admin panel",
+        "User and permission management",
+        "Scalable architecture ready to grow"
+      ]
+    },
+    {
+      "plan": 5,
+      "slug": "rediseno-rehacer-web",
+      "titulo": "Web Redesign & Optimization",
+      "precioARS": 450000,
+      "precioUSD": 450,
+      "features": [
+        "Full audit of your current website",
+        "Modern UX/UI redesign",
+        "Speed and SEO optimization",
+        "Secure content migration"
+      ]
+    }
+  ]
+ },
+ "planes": {
+  "title": "What",
+  "titleAccent": "services",
+  "titleEnd": "do we offer?",
+  "nota": "One-time investment · Your site, your control",
+  "btnMas": "Learn more",
+  "planLabel": "Plan",
+  "desde": "From",
+  "monedaARS": "ARS",
+  "monedaUSD": "USD"
+},
+
+"planesDetalle": [
+  {
+    "id": 1,
+    "slug": "diseno-web-economico",
+    "color": "green",
+    "numeroPlan": "PLAN 1",
+    "titulo": "Affordable Web Design",
+    "subtitulo": "Launch Website / Digital Presence",
+    "descripcion": "Plan 1 is designed for those who need a professional, clear, and well-structured online presence without complex systems or internal management. It is ideal for launching a brand, refreshing its image, or having a modern business website that builds trust and generates inquiries.",
+    "enfoque": "Strategic design first, development after.",
+    "paraQuien": [
+      "Entrepreneurs",
+      "Independent professionals",
+      "Local businesses",
+      "Early-stage brands",
+      "Companies that do not need to self-manage content"
+    ],
+    "proceso": [
+      {
+        "etapa": "Stage 1",
+        "numero": "01",
+        "titulo": "UX/UI Design",
+        "pasos": [
+          {
+            "titulo": "Website structure",
+            "descripcion": "We define the foundation and content order for a clear experience.",
+            "tag": "Foundation"
+          },
+          {
+            "titulo": "Visual design",
+            "descripcion": "We create a visual proposal aligned with the brand identity.",
+            "tag": "UI"
+          },
+          {
+            "titulo": "Adjustments and validation",
+            "descripcion": "We review, refine, and approve the final version before development.",
+            "tag": "Review"
+          }
+        ]
+      },
+      {
+        "etapa": "Stage 2",
+        "numero": "02",
+        "titulo": "Development",
+        "pasos": [
+          {
+            "titulo": "Core development",
+            "descripcion": "We build the website focusing on performance, clarity, and stability.",
+            "tag": "Code"
+          },
+          {
+            "titulo": "Responsive and integrations",
+            "descripcion": "We adapt the site to all devices and integrate what is needed.",
+            "tag": "Responsive"
+          },
+          {
+            "titulo": "Final launch",
+            "descripcion": "We validate the project, publish it, and support the final handoff.",
+            "tag": "Launch"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Up to 5 custom sections",
+      "100% custom design",
+      "Clear architecture",
+      "Fully responsive",
+      "Basic structural SEO",
+      "WhatsApp button",
+      "Social media integration",
+      "Google Maps",
+      "Hosting (1st year)",
+      "Domain (1st year)",
+      "SSL certificate",
+      "Final launch"
+    ],
+    "estructura": [
+      "Home",
+      "About the brand",
+      "Services / Products",
+      "Contact",
+      "Footer"
+    ],
+    "tiempos": [
+      "Design: 2 to 3 business days",
+      "Development: 5 to 7 business days",
+      "Estimated total: 7 to 10 business days"
+    ],
+    "revisiones": [
+      "2 rounds of design revisions",
+      "1 round of minor post-development adjustments"
+    ],
+    "precio": "$350 USD",
+    "modalidad": "Custom quote based on project scope."
+  },
+
+  {
+    "id": 2,
+    "slug": "diseno-web-profesional",
+    "color": "blue",
+    "numeroPlan": "PLAN 2",
+    "titulo": "Professional Web Design",
+    "subtitulo": "Self-Managed Business Website",
+    "descripcion": "Plan 2 is aimed at brands and businesses that need a professional, solid, and self-managed website, ready to grow and evolve over time. It is not just online presence. It is structure, order, and control over content.",
+    "enfoque": "Strategic design + editable system + scalable foundation.",
+    "paraQuien": [
+      "Growing companies",
+      "Brands that update content frequently",
+      "Businesses that need autonomy",
+      "Projects that require a blog or dynamic content management",
+      "Organizations with multiple sections"
+    ],
+    "proceso": [
+      {
+        "etapa": "Stage 1",
+        "numero": "01",
+        "titulo": "UX/UI Design",
+        "pasos": [
+          {
+            "titulo": "Content architecture",
+            "descripcion": "We organize sections, priorities, and navigation to bring clarity to the site.",
+            "tag": "Architecture"
+          },
+          {
+            "titulo": "Visual design",
+            "descripcion": "We design a professional, solid interface aligned with the brand.",
+            "tag": "UI"
+          },
+          {
+            "titulo": "Adjustments and validation",
+            "descripcion": "We refine the proposal until it is approved for development.",
+            "tag": "Validation"
+          }
+        ]
+      },
+      {
+        "etapa": "Stage 2",
+        "numero": "02",
+        "titulo": "Development",
+        "pasos": [
+          {
+            "titulo": "Website development",
+            "descripcion": "We build a solid, organized foundation prepared for growth.",
+            "tag": "Code"
+          },
+          {
+            "titulo": "Editable system",
+            "descripcion": "We implement a self-managed content panel and editing system.",
+            "tag": "CMS"
+          },
+          {
+            "titulo": "Launch and follow-up",
+            "descripcion": "We leave the site live, validated, and with progress follow-up.",
+            "tag": "Launch"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Up to 8 custom sections",
+      "100% custom design",
+      "Self-managed system",
+      "Basic management panel",
+      "Fully responsive",
+      "Structural SEO + best practices",
+      "WhatsApp button",
+      "Custom forms",
+      "Social media integration",
+      "Google Maps",
+      "Hosting (1st year)",
+      "Domain (1st year)",
+      "SSL certificate",
+      "Final launch"
+    ],
+    "estructura": [
+      "Home",
+      "About the company",
+      "Services",
+      "Featured section",
+      "Blog / News",
+      "Contact",
+      "Footer"
+    ],
+    "tiempos": [
+      "Design: 3 to 5 business days",
+      "Development: 7 to 10 business days",
+      "Estimated total: 10 to 15 business days"
+    ],
+    "revisiones": [
+      "3 rounds of design revisions",
+      "2 rounds of post-development adjustments"
+    ],
+    "precio": "$550 USD",
+    "modalidad": "Custom quote based on project scope."
+  },
+
+  {
+    "id": 3,
+    "slug": "ecommerce-profesional",
+    "color": "purple",
+    "numeroPlan": "PLAN 3",
+    "titulo": "E-commerce Web Design",
+    "subtitulo": "Standard Online Store",
+    "descripcion": "Plan 3 is designed for brands and businesses that want to sell online professionally, with a clear, functional store optimized to turn visits into sales. It is not just about having a cart. It is about designing a solid, clear, and scalable buying experience.",
+    "enfoque": "Shopping UX + commercial structure + self-managed system.",
+    "paraQuien": [
+      "Businesses selling physical or digital products",
+      "Brands that want to formalize online sales",
+      "Businesses currently selling through Instagram or WhatsApp",
+      "Stores with a small or medium catalog",
+      "Projects that need a system without complex logic"
+    ],
+    "proceso": [
+      {
+        "etapa": "Stage 1",
+        "numero": "01",
+        "titulo": "UX/UI Design",
+        "pasos": [
+          {
+            "titulo": "Homepage design",
+            "descripcion": "We define the main presentation and key store pages.",
+            "tag": "UX/UI"
+          },
+          {
+            "titulo": "Purchase flow",
+            "descripcion": "We design the ideal journey to make conversion easier.",
+            "tag": "Flow"
+          },
+          {
+            "titulo": "Catalog and validation",
+            "descripcion": "We organize the catalog and refine the proposal before development.",
+            "tag": "Structure"
+          }
+        ]
+      },
+      {
+        "etapa": "Stage 2",
+        "numero": "02",
+        "titulo": "Development",
+        "pasos": [
+          {
+            "titulo": "Self-managed store",
+            "descripcion": "We develop the store with an editable system and clear commercial structure.",
+            "tag": "CMS"
+          },
+          {
+            "titulo": "Products, payments, and shipping",
+            "descripcion": "We configure the catalog, payments, and basic logistics options.",
+            "tag": "Payments"
+          },
+          {
+            "titulo": "Final launch",
+            "descripcion": "We validate the project, publish it, and support the process.",
+            "tag": "Launch"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "100% custom design",
+      "Self-managed store",
+      "Product catalog",
+      "Individual product page",
+      "Shopping cart",
+      "Optimized checkout",
+      "Basic order management",
+      "Simple stock management",
+      "Regular price + sale price",
+      "Coupon and discount system",
+      "Fully responsive",
+      "Structural SEO",
+      "WhatsApp button",
+      "Hosting (1st year)",
+      "Domain (1st year)",
+      "SSL certificate",
+      "Final launch"
+    ],
+    "estructura": [
+      "Home",
+      "Store / Catalog",
+      "Product page",
+      "Cart",
+      "Checkout",
+      "My account",
+      "About the brand",
+      "Contact",
+      "Footer"
+    ],
+    "tiempos": [
+      "Design: 4 to 6 business days",
+      "Development: 10 to 15 business days",
+      "Estimated total: 15 to 20 business days"
+    ],
+    "revisiones": [
+      "3 rounds of design revisions",
+      "2 rounds of post-development adjustments"
+    ],
+    "precio": "$850 USD",
+    "modalidad": "Custom quote based on project scope."
+  },
+
+  {
+    "id": 4,
+    "slug": "corporativo-sistemas-a-medida",
+    "color": "violet",
+    "numeroPlan": "PLAN 4",
+    "titulo": "Corporate & Custom Systems",
+    "subtitulo": "Advanced Digital Platforms / Enterprise Level",
+    "descripcion": "Plan 4 is aimed at companies that need much more than a website or an e-commerce solution. Here, complete digital platforms are designed: internal systems, private portals, dashboards, CRM, intranets, or custom solutions built to scale over time.",
+    "enfoque": "Strategic architecture + process-oriented UX + modular development.",
+    "paraQuien": [
+      "Companies with defined internal processes",
+      "Teams that manage users and permissions",
+      "Businesses that need automation",
+      "Projects with custom business logic",
+      "Organizations seeking real scalability"
+    ],
+    "proceso": [
+      {
+        "etapa": "Stage 1",
+        "numero": "01",
+        "titulo": "Discovery & Strategy",
+        "pasos": [
+          {
+            "titulo": "Project analysis",
+            "descripcion": "We gather goals, context, needs, and business logic.",
+            "tag": "Discovery"
+          },
+          {
+            "titulo": "Architecture and scope",
+            "descripcion": "We define modules, priorities, and the overall system structure.",
+            "tag": "Architecture"
+          },
+          {
+            "titulo": "Technical roadmap",
+            "descripcion": "We organize development by stages to move forward with control.",
+            "tag": "Roadmap"
+          }
+        ]
+      },
+      {
+        "etapa": "Stage 2",
+        "numero": "02",
+        "titulo": "UX/UI & Prototyping",
+        "pasos": [
+          {
+            "titulo": "Information architecture",
+            "descripcion": "We design views, flows, and hierarchies according to the system.",
+            "tag": "UX"
+          },
+          {
+            "titulo": "Wireframes and prototypes",
+            "descripcion": "We create screens and navigable prototypes to validate the experience.",
+            "tag": "Proto"
+          },
+          {
+            "titulo": "Role-based validation",
+            "descripcion": "We adjust the experience according to profiles, permissions, and needs.",
+            "tag": "Roles"
+          }
+        ]
+      },
+      {
+        "etapa": "Stage 3",
+        "numero": "03",
+        "titulo": "Modular Development",
+        "pasos": [
+          {
+            "titulo": "System development",
+            "descripcion": "We build the frontend and backend on a modular and scalable foundation.",
+            "tag": "Stack"
+          },
+          {
+            "titulo": "Integrations and testing",
+            "descripcion": "We connect services, validate flows, and test stability.",
+            "tag": "QA"
+          },
+          {
+            "titulo": "Phased delivery",
+            "descripcion": "We publish and validate the system by modules or sprints.",
+            "tag": "Sprint"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Corporate UX/UI design",
+      "100% custom development",
+      "User management",
+      "Roles and permissions",
+      "Advanced admin panel",
+      "Initial dashboard",
+      "Custom business logic",
+      "Enhanced security",
+      "Scalable architecture",
+      "Initial infrastructure",
+      "SSL",
+      "Modular launch"
+    ],
+    "estructura": [
+      "Advanced admin panel",
+      "User management",
+      "Roles and permissions",
+      "CRM / ERP / LMS",
+      "Private portals",
+      "Automations",
+      "Exportable reports",
+      "External API integrations",
+      "Custom dashboards"
+    ],
+    "tiempos": [
+      "Discovery + UX: 10 to 15 business days",
+      "Development: 30 to 60 business days",
+      "Estimated total: 45 to 75 business days"
+    ],
+    "revisiones": [
+      "Sprint-based revisions",
+      "Module-by-module validation",
+      "Controlled functional adjustments"
+    ],
+    "precio": "Custom Quote",
+    "modalidad": "Stage-based budget. Custom quote depending on the number of modules, complexity, integrations, user volume, and required infrastructure."
+  },
+
+  {
+    "id": 5,
+    "slug": "rediseno-rehacer-web",
+    "color": "yellow",
+    "numeroPlan": "PLAN 5",
+    "titulo": "Redesign & Website Rebuild",
+    "subtitulo": "Strategic Reconstruction of an Existing Website",
+    "descripcion": "Plan 5 is aimed at brands and companies that already have a website but need to modernize it, reorganize it, or improve its performance. Sometimes the right move is to rebuild it with strategic criteria.",
+    "enfoque": "Previous analysis + structural redesign + technical improvement.",
+    "paraQuien": [
+      "Companies with outdated websites",
+      "Businesses that changed their direction",
+      "Sites with performance issues",
+      "Brands that need to modernize their image",
+      "Projects that want to improve without losing positioning"
+    ],
+    "proceso": [
+      {
+        "etapa": "Stage 1",
+        "numero": "01",
+        "titulo": "Audit & Analysis",
+        "pasos": [
+          {
+            "titulo": "Current site review",
+            "descripcion": "We analyze the project structure, content, and overall condition.",
+            "tag": "Audit"
+          },
+          {
+            "titulo": "Technical diagnosis",
+            "descripcion": "We evaluate performance, technical foundation, and improvement opportunities.",
+            "tag": "Technical"
+          },
+          {
+            "titulo": "Scope definition",
+            "descripcion": "We determine whether it is best to redesign, rebuild, or fully reconstruct.",
+            "tag": "Scope"
+          }
+        ]
+      },
+      {
+        "etapa": "Stage 2",
+        "numero": "02",
+        "titulo": "UX/UI Redesign",
+        "pasos": [
+          {
+            "titulo": "New structure",
+            "descripcion": "We rethink sections, hierarchies, and site navigation.",
+            "tag": "UX"
+          },
+          {
+            "titulo": "Visual improvement",
+            "descripcion": "We update the aesthetics for a more modern and clearer image.",
+            "tag": "UI"
+          },
+          {
+            "titulo": "Adjustments and validation",
+            "descripcion": "We refine the redesign until it is ready for reconstruction.",
+            "tag": "Validation"
+          }
+        ]
+      },
+      {
+        "etapa": "Stage 3",
+        "numero": "03",
+        "titulo": "Technical Rebuild",
+        "pasos": [
+          {
+            "titulo": "New optimized foundation",
+            "descripcion": "We rebuild the site on a cleaner and more efficient structure.",
+            "tag": "Code"
+          },
+          {
+            "titulo": "Performance and responsive design",
+            "descripcion": "We optimize speed, stability, and adaptation across devices.",
+            "tag": "Performance"
+          },
+          {
+            "titulo": "Final launch",
+            "descripcion": "We launch the rebuilt and validated website.",
+            "tag": "Launch"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Initial audit",
+      "Structure redefinition",
+      "Up to 5 rebuilt sections",
+      "Full visual improvement",
+      "Technical optimization",
+      "Basic structural SEO",
+      "Fully responsive",
+      "Hosting / domain (if applicable)",
+      "SSL",
+      "Final launch"
+    ],
+    "estructura": [
+      "Rebuild Home",
+      "Reorganize sections",
+      "Improve visual design",
+      "Optimize speed",
+      "Update content",
+      "Modernize structure"
+    ],
+    "tiempos": [
+      "Audit + Design: 5 to 7 business days",
+      "Development: 7 to 12 business days",
+      "Estimated total: 12 to 20 business days"
+    ],
+    "revisiones": [
+      "2 to 3 rounds of design adjustments",
+      "1 to 2 post-development rounds"
+    ],
+    "precio": "$450 USD",
+    "modalidad": "The final value depends on the current state of the site, the number of sections to rebuild, the level of redesign needed, and the technical complexity."
+  }
+],
+
+"planDetail": {
+  "hero": {
+    "focusLabel": "FOCUS",
+    "modeLabel": "MODEL",
+    "basePriceLabel": "BASE PRICE",
+    "from": "From"
+  },
+  "timeline": {
+    "eyebrow": "Project process",
+    "title": "How the plan is developed",
+    "desc": "Each project follows a clear phase structure to ensure order, validation, and consistent results."
+  },
+  "info": {
+    "scope": {
+      "title": "Plan scope",
+      "desc": "Everything included in this proposal within the development process."
+    },
+    "forWho": {
+      "title": "Who is this for?",
+      "desc": "Ideal profiles for this type of solution."
+    },
+    "structure": {
+      "title": "Included structure",
+      "desc": "Core sections considered within the project."
+    },
+    "times": {
+      "title": "Estimated timelines",
+      "desc": "General reference for the projected timing of each stage."
+    },
+    "revisions": {
+      "title": "Included revisions",
+      "desc": "Review instances included to adjust and validate the project."
+    }
+  },
+  "cta": {
+    "kicker": "Next step",
+    "title": "Let’s bring this plan into your project",
+    "text": "We define the real scope, adjust priorities, and prepare a clear proposal based on your goals.",
+    "button": "Request this plan"
+  }
+}
+
 }

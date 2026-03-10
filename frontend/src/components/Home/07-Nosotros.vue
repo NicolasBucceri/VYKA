@@ -16,9 +16,13 @@
             {{ t("nosotros.ctaBanner.titleLine2") }}
           </h3>
 
-          <button class="cta-banner-btn" type="button">
+          <BotonPrimario
+            size="lg"
+            class="cta-banner-btn"
+            @click="openWhatsApp('diagnostico')"
+          >
             {{ t("nosotros.ctaBanner.button") }}
-          </button>
+          </BotonPrimario>
         </div>
       </section>
     </section>
@@ -28,7 +32,9 @@
 <script setup>
 import Vyka from "@/components/ui/Background.vue";
 import NosotrosCard from "@/components/ui/NosotrosCard.vue";
+import BotonPrimario from "@/components/ui/BotonPrimario.vue";
 import { useLang } from "@/composables/useLang";
+import { openWhatsApp } from "@/utils/whatsapp";
 
 const { t } = useLang();
 </script>
@@ -37,6 +43,7 @@ const { t } = useLang();
 /* =========================
    BASE
 ========================= */
+
 .nosotros {
   background: #0b0b10;
   padding: 90px 0 0;
@@ -49,19 +56,17 @@ const { t } = useLang();
 }
 
 /* =========================
-   CTA BANNER (LOOK IMAGEN)
+   CTA BANNER
 ========================= */
+
 .cta-banner {
   position: relative;
   overflow: hidden;
 
   width: 100%;
   padding: clamp(56px, 5vw, 32px) 0;
-
-  /* fondo oscuro con aura azul */
 }
 
-/* Glow grande suave arriba (como en tu screenshot) */
 .cta-banner::before {
   content: "";
   position: absolute;
@@ -77,7 +82,6 @@ const { t } = useLang();
   z-index: 0;
 }
 
-/* Contenido centrado */
 .cta-banner-inner {
   position: relative;
   z-index: 1;
@@ -91,7 +95,6 @@ const { t } = useLang();
   gap: 18px;
 }
 
-/* Título grande, finito, premium */
 .cta-banner-title {
   margin: 0;
 
@@ -104,36 +107,12 @@ const { t } = useLang();
   color: rgba(255,255,255,0.92);
 }
 
-/* Botón tipo “píldora” */
+/* ancho del botón */
 .cta-banner-btn {
   width: min(420px, 92%);
-  height: 46px;
-
-  border-radius: 999px;
-  border: 1px solid rgba(45,140,255,0.55);
-
-  background: rgba(10, 16, 28, 0.55);
-  backdrop-filter: blur(10px);
-
-  color: rgba(255,255,255,0.92);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-
-  cursor: pointer;
-  transition: transform 0.18s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
-.cta-banner-btn:hover {
-  transform: translateY(-1px);
-  border-color: rgba(45,140,255,0.95);
-  background: rgba(18, 28, 48, 0.68);
-}
-
-.cta-banner-btn:active {
-  transform: translateY(0);
-}
-
-/* mobile micro ajuste */
+/* mobile */
 @media (max-width: 520px) {
   .cta-banner-title {
     letter-spacing: 0.04em;

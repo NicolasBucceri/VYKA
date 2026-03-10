@@ -36,7 +36,7 @@
             </div>
           </div>
 
-          <!-- RIGHT -->
+          <!-- RIGHT / EARTH CANVAS -->
           <div class="intro__right">
             <EarthCanvas />
           </div>
@@ -84,13 +84,35 @@ const { t } = useLang();
   margin-bottom: clamp(18px, 3vw, 28px);
 }
 
+/* =========================
+   GRID LAYOUT
+========================= */
 .intro__grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
+  grid-template-areas: 
+    "left right";
   gap: clamp(24px, 4vw, 56px);
-  align-items: center;
+  align-items: start;
 }
 
+/* Reasignar áreas */
+.intro__left {
+  grid-area: left;
+}
+
+.intro__right {
+  grid-area: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 320px; /* tamaño del canvas */
+}
+
+/* =========================
+   TIPOGRAFÍA Y ESTILO
+========================= */
 .intro__eyebrow {
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -132,7 +154,7 @@ const { t } = useLang();
 }
 
 .intro__desc {
-  margin: 0;
+  margin: 0 0 18px;
   max-width: 56ch;
   color: rgba(180, 180, 180, 0.9);
   font-size: 15px;
@@ -146,7 +168,6 @@ const { t } = useLang();
   margin-top: 22px;
 }
 
-/* Solo layout/spacing del contenedor UI */
 .intro__cta {
   display: inline-flex;
 }
@@ -156,24 +177,30 @@ const { t } = useLang();
   margin-left: 6px;
 }
 
-.intro__right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 980px) {
   .intro__grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "left"
+      "right";
   }
 
   .intro__right {
-    order: -1;
+    min-height: 280px;
+    margin-top: 24px;
   }
 
   .intro__desc {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .intro__right {
+    min-height: 200px;
   }
 }
 </style>

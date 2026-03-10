@@ -1,26 +1,15 @@
 <!-- src/views/05-ProyectoDetalle.vue -->
 <template>
   <main class="page">
-    <!-- ✅ Estado: proyecto encontrado -->
     <template v-if="proyecto">
-      <!-- HERO -->
-      <HeroProyecto
-        :proyecto="proyecto"
-      />
-
-      <!-- EXPLICACIÓN -->
-      <ExplicacionProyecto
-        :proyecto="proyecto"
-      />
-
-      <!-- RESULTADOS (si tenés componente) -->
+      <HeroProyecto :proyecto="proyecto" />
+      <ExplicacionProyecto :proyecto="proyecto" />
       <ResultadosProyecto
         v-if="proyecto.resultados?.length"
         :proyecto="proyecto"
       />
     </template>
 
-    <!-- ❌ Estado: no encontrado -->
     <template v-else>
       <section class="notFound">
         <div class="wrap">
@@ -44,23 +33,17 @@
 import { computed, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 
-// ✅ Importás desde tu Single Source of Truth
 import { getProyectoBySlug } from "@/content/projects.master";
 
-// ✅ Componentes (ajustá rutas según tu estructura real)
 import HeroProyecto from "@/components/Proyectos/01-Hero.vue";
 import ExplicacionProyecto from "@/components/Proyectos/02-Explicacion.vue";
 import ResultadosProyecto from "@/components/Proyectos/03-Resultados.vue";
 
 const route = useRoute();
 
-// slug actual
 const slug = computed(() => String(route.params.slug || ""));
-
-// ✅ Proyecto correcto (ya viene con explicacion.bullets si lo cargaste en el master)
 const proyecto = computed(() => getProyectoBySlug(slug.value));
 
-/* Debug opcional (borrás después) */
 watchEffect(() => {
   if (!slug.value) return;
   console.log("[ProyectoDetalle] slug:", slug.value);
@@ -94,7 +77,7 @@ watchEffect(() => {
 
 .title{
   margin: 0 0 10px;
-  font-size: clamp(2.0rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 950;
   letter-spacing: -0.02em;
   color: rgba(255,255,255,0.95);
@@ -134,5 +117,7 @@ watchEffect(() => {
   background: rgba(255,255,255,0.10);
 }
 
-.arrow{ opacity: .8; }
+.arrow{
+  opacity: .8;
+}
 </style>

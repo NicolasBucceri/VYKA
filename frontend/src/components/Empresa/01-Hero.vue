@@ -8,7 +8,7 @@
       playsinline
       preload="auto"
     >
-      <source src="@/assets/Empresa/HeroEmpresa.mp4" type="video/mp4" />
+      <source src="@/assets/Empresa/HeroEmpresa.webm" type="video/mp4" />
     </video>
 
     <!-- Oscurecimiento sutil -->

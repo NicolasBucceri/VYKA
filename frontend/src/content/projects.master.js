@@ -9,46 +9,46 @@
 ------------------------ */
 const ASSETS = {
   plego: {
-    portada: new URL("../assets/Proyectos/Plego/PlegoPortada.png", import.meta.url).href,
+    portada: new URL("../assets/Proyectos/Plego/PlegoPortada.webp", import.meta.url).href,
     hero: [
-      new URL("../assets/Proyectos/Plego/PlegoImg1.png", import.meta.url).href,
-      new URL("../assets/Proyectos/Plego/PlegoImg2.png", import.meta.url).href,
-      new URL("../assets/Proyectos/Plego/PlegoImg3.png", import.meta.url).href,
+      new URL("../assets/Proyectos/Plego/PlegoImg1.webp", import.meta.url).href,
+      new URL("../assets/Proyectos/Plego/PlegoImg2.webp", import.meta.url).href,
+      new URL("../assets/Proyectos/Plego/PlegoImg3.webp", import.meta.url).href,
     ],
-    poster: new URL("../assets/Proyectos/Plego/PlegoHero.png", import.meta.url).href,
+    poster: new URL("../assets/Proyectos/Plego/PlegoHero.webp", import.meta.url).href,
     // video: new URL("../assets/Proyectos/Plego/plego.mp4", import.meta.url).href,
   },
 
   fralo: {
-    // En tu screenshot NO se ve FraloPortada.png, así que uso Hero como portada
-    portada: new URL("../assets/Proyectos/Fralo/FraloHero.png", import.meta.url).href,
+    // En tu screenshot NO se ve FraloPortada.webp, así que uso Hero como portada
+    portada: new URL("../assets/Proyectos/Fralo/FraloHero.webp", import.meta.url).href,
     hero: [
-      new URL("../assets/Proyectos/Fralo/FraloImg1.png", import.meta.url).href,
-      new URL("../assets/Proyectos/Fralo/FraloImg2.png", import.meta.url).href,
-      new URL("../assets/Proyectos/Fralo/FraloImg3.png", import.meta.url).href,
+      new URL("../assets/Proyectos/Fralo/FraloImg1.webp", import.meta.url).href,
+      new URL("../assets/Proyectos/Fralo/FraloImg2.webp", import.meta.url).href,
+      new URL("../assets/Proyectos/Fralo/FraloImg3.webp", import.meta.url).href,
     ],
-    poster: new URL("../assets/Proyectos/Fralo/FraloHero.png", import.meta.url).href,
+    poster: new URL("../assets/Proyectos/Fralo/FraloHero.webp", import.meta.url).href,
   },
 
   baviera: {
-    // En tu screenshot NO se ve BavieraPortada.png, así que uso Hero como portada
-    portada: new URL("../assets/Proyectos/Baviera/BavieraHero.png", import.meta.url).href,
+    // En tu screenshot NO se ve BavieraPortada.webp, así que uso Hero como portada
+    portada: new URL("../assets/Proyectos/Baviera/BavieraHero.webp", import.meta.url).href,
     hero: [
-      new URL("../assets/Proyectos/Baviera/BavieraImg1.png", import.meta.url).href,
-      new URL("../assets/Proyectos/Baviera/BavieraImg2.png", import.meta.url).href,
-      new URL("../assets/Proyectos/Baviera/BavieraImg3.png", import.meta.url).href,
+      new URL("../assets/Proyectos/Baviera/BavieraImg1.webp", import.meta.url).href,
+      new URL("../assets/Proyectos/Baviera/BavieraImg2.webp", import.meta.url).href,
+      new URL("../assets/Proyectos/Baviera/BavieraImg3.webp", import.meta.url).href,
     ],
-    poster: new URL("../assets/Proyectos/Baviera/BavieraHero.png", import.meta.url).href,
+    poster: new URL("../assets/Proyectos/Baviera/BavieraHero.webp", import.meta.url).href,
   },
 
   "dolce-mattina": {
-    portada: new URL("../assets/Proyectos/DolceMattina/DolceMattinaPortada.png", import.meta.url).href,
+    portada: new URL("../assets/Proyectos/DolceMattina/DolceMattinaPortada.webp", import.meta.url).href,
     hero: [
-      new URL("../assets/Proyectos/DolceMattina/DolceImg1.png", import.meta.url).href,
-      new URL("../assets/Proyectos/DolceMattina/DolceImg2.png", import.meta.url).href,
-      new URL("../assets/Proyectos/DolceMattina/DolceImg3.png", import.meta.url).href,
+      new URL("../assets/Proyectos/DolceMattina/DolceImg1.webp", import.meta.url).href,
+      new URL("../assets/Proyectos/DolceMattina/DolceImg2.webp", import.meta.url).href,
+      new URL("../assets/Proyectos/DolceMattina/DolceImg3.webp", import.meta.url).href,
     ],
-    poster: new URL("../assets/Proyectos/DolceMattina/DolceMattinaHero.png", import.meta.url).href,
+    poster: new URL("../assets/Proyectos/DolceMattina/DolceMattinaHero.webp", import.meta.url).href,
   },
 };
 

@@ -37,11 +37,17 @@
           </p>
 
           <div class="cta-buttons">
-            <BotonPrimario class="cta-btn">
+            <BotonPrimario
+              class="cta-btn"
+              @click="openWhatsApp('diagnostico')"
+            >
               {{ t("faq.cta.btnPrimary") }}
             </BotonPrimario>
 
-            <BotonSecundario class="cta-btn">
+            <BotonSecundario
+              class="cta-btn"
+              @click="openWhatsApp('soporte')"
+            >
               {{ t("faq.cta.btnSecondary") }}
             </BotonSecundario>
           </div>
@@ -58,6 +64,7 @@ import FaqItem from "@/components/ui/FaqItem.vue";
 import BotonPrimario from "@/components/ui/BotonPrimario.vue";
 import BotonSecundario from "@/components/ui/BotonSecundario.vue";
 import { useLang } from "@/composables/useLang";
+import { openWhatsApp } from "@/utils/whatsapp";
 
 const { t } = useLang();
 
@@ -133,18 +140,9 @@ function toggleItem(index) {
   border-radius: 22px;
   text-align: center;
   background:
-    radial-gradient(900px 320px at 50% 0%,
-      rgba(45, 140, 255, 0.18),
-      transparent 62%
-    ),
-    radial-gradient(700px 420px at 0% 100%,
-      rgba(109, 93, 246, 0.16),
-      transparent 60%
-    ),
-    radial-gradient(700px 420px at 100% 100%,
-      rgba(45, 140, 255, 0.10),
-      transparent 60%
-    ),
+    radial-gradient(900px 320px at 50% 0%, rgba(45, 140, 255, 0.18), transparent 62%),
+    radial-gradient(700px 420px at 0% 100%, rgba(109, 93, 246, 0.16), transparent 60%),
+    radial-gradient(700px 420px at 100% 100%, rgba(45, 140, 255, 0.10), transparent 60%),
     rgba(10, 10, 14, 0.62);
 
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -163,10 +161,7 @@ function toggleItem(index) {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(180deg,
-      rgba(255,255,255,0.06),
-      transparent 35%
-    );
+    linear-gradient(180deg, rgba(255,255,255,0.06), transparent 35%);
   opacity: 0.35;
 }
 

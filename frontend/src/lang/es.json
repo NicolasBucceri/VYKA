@@ -154,5 +154,658 @@
     "p2": "Trabajamos de forma directa con cada cliente, entendiendo su negocio para crear experiencias claras, funcionales y alineadas a sus objetivos."
   },
   "button": "Saber más"
- }
+ },
+ "planes": {
+  "title": "¿Qué",
+  "titleAccent": "servicios",
+  "titleEnd": "ofrecemos?",
+  "nota": "Inversión única · Tu sitio, tu control",
+  "btnMas": "Saber más",
+  "items": [
+    {
+      "plan": 1,
+      "slug": "diseno-web-economico",
+      "titulo": "Diseño Web Económico",
+      "precioARS": 350000,
+      "precioUSD": 350,
+      "features": [
+        "Diseño web profesional a medida",
+        "Hasta 5 secciones personalizadas",
+        "Optimizada para mobile (responsive)",
+        "Integración con WhatsApp y redes"
+      ]
+    },
+    {
+      "plan": 2,
+      "slug": "diseno-web-profesional",
+      "titulo": "Diseño Web Profesional",
+      "precioARS": 550000,
+      "precioUSD": 550,
+      "recomendado": true,
+      "features": [
+        "Diseño UX/UI profesional a medida",
+        "Panel autoadministrable (CMS)",
+        "Formularios y generación de consultas",
+        "SEO estructural optimizado"
+      ]
+    },
+    {
+      "plan": 3,
+      "slug": "ecommerce-profesional",
+      "titulo": "E-commerce Profesional",
+      "precioARS": 850000,
+      "precioUSD": 850,
+      "features": [
+        "Tienda online autoadministrable",
+        "Carrito y checkout optimizado",
+        "Pagos y envíos integrados",
+        "Gestión de productos y pedidos"
+      ]
+    },
+    {
+      "plan": 4,
+      "slug": "corporativo-sistemas-a-medida",
+      "titulo": "Corporativa & Sistemas a Medida",
+      "precioARS": 1800000,
+      "precioUSD": 1800,
+      "features": [
+        "Desarrollo web y sistema a medida",
+        "Panel administrativo personalizado",
+        "Gestión de usuarios y permisos",
+        "Arquitectura preparada para escalar"
+      ]
+    },
+    {
+      "plan": 5,
+      "slug": "rediseno-rehacer-web",
+      "titulo": "Rediseño y Optimización Web",
+      "precioARS": 450000,
+      "precioUSD": 450,
+      "features": [
+        "Auditoría completa de la web actual",
+        "Rediseño UX/UI moderno",
+        "Optimización de velocidad y SEO",
+        "Migración segura del contenido"
+      ]
+    }
+  ]
+ },"planesDetalle": [
+  {
+    "id": 1,
+    "slug": "diseno-web-economico",
+    "color": "green",
+    "numeroPlan": "PLAN 1",
+    "titulo": "Diseño Web Económico",
+    "subtitulo": "Web de Lanzamiento / Presencia Digital",
+    "descripcion": "El Plan 1 está pensado para quienes necesitan una presencia online profesional, clara y bien estructurada, sin sistemas complejos ni administración interna. Es ideal para lanzar una marca, actualizar imagen o tener una web institucional moderna que genere confianza y consultas.",
+    "enfoque": "Diseño estratégico primero, desarrollo después.",
+    "paraQuien": [
+      "Emprendedores",
+      "Profesionales independientes",
+      "Negocios locales",
+      "Marcas en etapa inicial",
+      "Empresas que no necesitan autogestionar contenido"
+    ],
+    "proceso": [
+      {
+        "etapa": "Etapa 1",
+        "numero": "01",
+        "titulo": "Diseño UX/UI",
+        "pasos": [
+          {
+            "titulo": "Estructura del sitio",
+            "descripcion": "Definimos la base y el orden del contenido para una experiencia clara.",
+            "tag": "Base"
+          },
+          {
+            "titulo": "Diseño visual",
+            "descripcion": "Creamos una propuesta visual alineada a la identidad de la marca.",
+            "tag": "UI"
+          },
+          {
+            "titulo": "Ajustes y validación",
+            "descripcion": "Revisamos, corregimos y aprobamos la versión final antes de programar.",
+            "tag": "Control"
+          }
+        ]
+      },
+      {
+        "etapa": "Etapa 2",
+        "numero": "02",
+        "titulo": "Desarrollo",
+        "pasos": [
+          {
+            "titulo": "Programación base",
+            "descripcion": "Construimos el sitio con foco en rendimiento, claridad y estabilidad.",
+            "tag": "Código"
+          },
+          {
+            "titulo": "Responsive e integraciones",
+            "descripcion": "Adaptamos la web a todos los dispositivos e integramos lo necesario.",
+            "tag": "Responsive"
+          },
+          {
+            "titulo": "Publicación final",
+            "descripcion": "Validamos el proyecto, lo publicamos y acompañamos el cierre.",
+            "tag": "Launch"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Hasta 5 secciones personalizadas",
+      "Diseño 100% a medida",
+      "Arquitectura clara",
+      "Responsive completo",
+      "SEO estructural básico",
+      "Botón de WhatsApp",
+      "Integración redes sociales",
+      "Google Maps",
+      "Hosting (1° año)",
+      "Dominio (1° año)",
+      "Certificado SSL",
+      "Publicación final"
+    ],
+    "estructura": [
+      "Inicio",
+      "Sobre la marca",
+      "Servicios / Productos",
+      "Contacto",
+      "Footer"
+    ],
+    "tiempos": [
+      "Diseño: 2 a 3 días hábiles",
+      "Desarrollo: 5 a 7 días hábiles",
+      "Total estimado: 7 a 10 días hábiles"
+    ],
+    "revisiones": [
+      "2 rondas de ajustes en diseño",
+      "1 ronda de ajustes menores post desarrollo"
+    ],
+    "precio": "$350.000 ARS",
+    "modalidad": "Cotización personalizada según alcance."
+  },
+  {
+    "id": 2,
+    "slug": "diseno-web-profesional",
+    "color": "blue",
+    "numeroPlan": "PLAN 2",
+    "titulo": "Diseño Web Profesional",
+    "subtitulo": "Web Institucional Autoadministrable",
+    "descripcion": "El Plan 2 está orientado a marcas y negocios que necesitan una web profesional, sólida y autoadministrable, preparada para crecer y actualizarse en el tiempo. No es solo presencia online. Es estructura, orden y control del contenido.",
+    "enfoque": "Diseño estratégico + sistema editable + base escalable.",
+    "paraQuien": [
+      "Empresas en crecimiento",
+      "Marcas que actualizan contenido con frecuencia",
+      "Negocios que necesitan autonomía",
+      "Proyectos que requieren blog o gestión dinámica",
+      "Instituciones con múltiples secciones"
+    ],
+    "proceso": [
+      {
+        "etapa": "Etapa 1",
+        "numero": "01",
+        "titulo": "Diseño UX/UI",
+        "pasos": [
+          {
+            "titulo": "Arquitectura del contenido",
+            "descripcion": "Organizamos secciones, prioridades y navegación para dar claridad al sitio.",
+            "tag": "Arquitectura"
+          },
+          {
+            "titulo": "Diseño visual",
+            "descripcion": "Diseñamos una interfaz profesional, sólida y alineada a la marca.",
+            "tag": "UI"
+          },
+          {
+            "titulo": "Ajustes y validación",
+            "descripcion": "Refinamos la propuesta hasta dejarla aprobada para desarrollo.",
+            "tag": "Validación"
+          }
+        ]
+      },
+      {
+        "etapa": "Etapa 2",
+        "numero": "02",
+        "titulo": "Desarrollo",
+        "pasos": [
+          {
+            "titulo": "Desarrollo del sitio",
+            "descripcion": "Programamos una base sólida, ordenada y preparada para crecer.",
+            "tag": "Código"
+          },
+          {
+            "titulo": "Sistema editable",
+            "descripcion": "Implementamos el panel y la edición de contenido autoadministrable.",
+            "tag": "CMS"
+          },
+          {
+            "titulo": "Publicación y seguimiento",
+            "descripcion": "Dejamos el sitio online, validado y con seguimiento del avance.",
+            "tag": "Launch"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Hasta 8 secciones personalizadas",
+      "Diseño 100% a medida",
+      "Sistema autoadministrable",
+      "Panel de gestión básico",
+      "Responsive completo",
+      "SEO estructural + buenas prácticas",
+      "Botón de WhatsApp",
+      "Formularios personalizados",
+      "Integración redes sociales",
+      "Google Maps",
+      "Hosting (1° año)",
+      "Dominio (1° año)",
+      "Certificado SSL",
+      "Publicación final"
+    ],
+    "estructura": [
+      "Inicio",
+      "Sobre la empresa",
+      "Servicios",
+      "Sección destacada",
+      "Blog / Novedades",
+      "Contacto",
+      "Footer"
+    ],
+    "tiempos": [
+      "Diseño: 3 a 5 días hábiles",
+      "Desarrollo: 7 a 10 días hábiles",
+      "Total estimado: 10 a 15 días hábiles"
+    ],
+    "revisiones": [
+      "3 rondas de ajustes en diseño",
+      "2 rondas de ajustes post desarrollo"
+    ],
+    "precio": "$550.000 ARS",
+    "modalidad": "Cotización personalizada según alcance."
+  },
+  {
+    "id": 3,
+    "slug": "ecommerce-profesional",
+    "color": "purple",
+    "numeroPlan": "PLAN 3",
+    "titulo": "Diseño Web E-commerce",
+    "subtitulo": "Tienda Online Estándar",
+    "descripcion": "El Plan 3 está pensado para marcas y negocios que quieren vender online de forma profesional, con una tienda clara, funcional y optimizada para convertir visitas en ventas. No es solo tener carrito. Es diseñar una experiencia de compra sólida, clara y escalable.",
+    "enfoque": "UX de compra + estructura comercial + sistema autoadministrable.",
+    "paraQuien": [
+      "Emprendimientos que venden productos físicos o digitales",
+      "Marcas que quieren formalizar ventas online",
+      "Negocios que hoy venden por Instagram o WhatsApp",
+      "Tiendas con catálogo pequeño o mediano",
+      "Proyectos que necesitan sistema pero no lógica compleja"
+    ],
+    "proceso": [
+      {
+        "etapa": "Etapa 1",
+        "numero": "01",
+        "titulo": "Diseño UX/UI",
+        "pasos": [
+          {
+            "titulo": "Diseño del home",
+            "descripcion": "Definimos la presentación principal y las páginas clave de la tienda.",
+            "tag": "UX/UI"
+          },
+          {
+            "titulo": "Flujo de compra",
+            "descripcion": "Diseñamos el recorrido ideal para facilitar la conversión.",
+            "tag": "Flujo"
+          },
+          {
+            "titulo": "Catálogo y validación",
+            "descripcion": "Ordenamos el catálogo y ajustamos la propuesta antes de programar.",
+            "tag": "Estructura"
+          }
+        ]
+      },
+      {
+        "etapa": "Etapa 2",
+        "numero": "02",
+        "titulo": "Desarrollo",
+        "pasos": [
+          {
+            "titulo": "Tienda autoadministrable",
+            "descripcion": "Desarrollamos la tienda con sistema editable y estructura comercial clara.",
+            "tag": "CMS"
+          },
+          {
+            "titulo": "Productos, pagos y envíos",
+            "descripcion": "Configuramos catálogo, cobros y opciones básicas de logística.",
+            "tag": "Pagos"
+          },
+          {
+            "titulo": "Publicación final",
+            "descripcion": "Validamos el proyecto, lo publicamos y acompañamos el proceso.",
+            "tag": "Launch"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Diseño 100% a medida",
+      "Tienda autoadministrable",
+      "Catálogo de productos",
+      "Página individual de producto",
+      "Carrito de compras",
+      "Checkout optimizado",
+      "Gestión básica de pedidos",
+      "Stock simple",
+      "Precio normal + precio en oferta",
+      "Sistema de cupones y descuentos",
+      "Responsive completo",
+      "SEO estructural",
+      "Botón de WhatsApp",
+      "Hosting (1° año)",
+      "Dominio (1° año)",
+      "Certificado SSL",
+      "Publicación final"
+    ],
+    "estructura": [
+      "Home",
+      "Tienda / Catálogo",
+      "Página de producto",
+      "Carrito",
+      "Checkout",
+      "Mi cuenta",
+      "Sobre la marca",
+      "Contacto",
+      "Footer"
+    ],
+    "tiempos": [
+      "Diseño: 4 a 6 días hábiles",
+      "Desarrollo: 10 a 15 días hábiles",
+      "Total estimado: 15 a 20 días hábiles"
+    ],
+    "revisiones": [
+      "3 rondas de ajustes en diseño",
+      "2 rondas de ajustes post desarrollo"
+    ],
+    "precio": "$850.000 ARS",
+    "modalidad": "Cotización personalizada según alcance."
+  },
+  {
+    "id": 4,
+    "slug": "corporativo-sistemas-a-medida",
+    "color": "violet",
+    "numeroPlan": "PLAN 4",
+    "titulo": "Corporativo & Sistemas a Medida",
+    "subtitulo": "Plataformas Digitales Avanzadas / Nivel Empresa",
+    "descripcion": "El Plan 4 está orientado a empresas que necesitan mucho más que una web o un e-commerce. Aquí se diseñan plataformas digitales completas: sistemas internos, portales privados, dashboards, CRM, intranets o soluciones personalizadas pensadas para escalar en el tiempo.",
+    "enfoque": "Arquitectura estratégica + UX orientada a procesos + desarrollo modular.",
+    "paraQuien": [
+      "Empresas con procesos internos definidos",
+      "Equipos que manejan usuarios y permisos",
+      "Negocios que necesitan automatización",
+      "Proyectos con lógica de negocio personalizada",
+      "Organizaciones que buscan escalabilidad real"
+    ],
+    "proceso": [
+      {
+        "etapa": "Etapa 1",
+        "numero": "01",
+        "titulo": "Discovery & Estrategia",
+        "pasos": [
+          {
+            "titulo": "Análisis del proyecto",
+            "descripcion": "Relevamos objetivos, contexto, necesidades y lógica del negocio.",
+            "tag": "Discovery"
+          },
+          {
+            "titulo": "Arquitectura y alcance",
+            "descripcion": "Definimos módulos, prioridades y estructura general del sistema.",
+            "tag": "Arquitectura"
+          },
+          {
+            "titulo": "Roadmap técnico",
+            "descripcion": "Ordenamos el desarrollo por etapas para avanzar con control.",
+            "tag": "Roadmap"
+          }
+        ]
+      },
+      {
+        "etapa": "Etapa 2",
+        "numero": "02",
+        "titulo": "UX/UI & Prototipado",
+        "pasos": [
+          {
+            "titulo": "Arquitectura de información",
+            "descripcion": "Diseñamos vistas, recorridos y jerarquías según el sistema.",
+            "tag": "UX"
+          },
+          {
+            "titulo": "Wireframes y prototipos",
+            "descripcion": "Creamos pantallas y prototipos navegables para validar la experiencia.",
+            "tag": "Proto"
+          },
+          {
+            "titulo": "Validación por roles",
+            "descripcion": "Ajustamos la experiencia según perfiles, permisos y necesidades.",
+            "tag": "Roles"
+          }
+        ]
+      },
+      {
+        "etapa": "Etapa 3",
+        "numero": "03",
+        "titulo": "Desarrollo Modular",
+        "pasos": [
+          {
+            "titulo": "Desarrollo del sistema",
+            "descripcion": "Construimos frontend y backend sobre una base modular y escalable.",
+            "tag": "Stack"
+          },
+          {
+            "titulo": "Integraciones y testing",
+            "descripcion": "Conectamos servicios, validamos flujos y testeamos estabilidad.",
+            "tag": "QA"
+          },
+          {
+            "titulo": "Entrega por etapas",
+            "descripcion": "Publicamos y validamos el sistema por módulos o sprints.",
+            "tag": "Sprint"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Diseño UX/UI corporativo",
+      "Desarrollo 100% a medida",
+      "Gestión de usuarios",
+      "Roles y permisos",
+      "Panel administrativo avanzado",
+      "Dashboard inicial",
+      "Lógica personalizada de negocio",
+      "Seguridad reforzada",
+      "Arquitectura escalable",
+      "Infraestructura inicial",
+      "SSL",
+      "Publicación por módulos"
+    ],
+    "estructura": [
+      "Panel administrativo avanzado",
+      "Gestión de usuarios",
+      "Roles y permisos",
+      "CRM / ERP / LMS",
+      "Portales privados",
+      "Automatizaciones",
+      "Reportes exportables",
+      "Integraciones API externas",
+      "Dashboards personalizados"
+    ],
+    "tiempos": [
+      "Discovery + UX: 10 a 15 días hábiles",
+      "Desarrollo: 30 a 60 días hábiles",
+      "Total estimado: 45 a 75 días hábiles"
+    ],
+    "revisiones": [
+      "Revisiones por sprint",
+      "Validación por módulo",
+      "Ajustes funcionales controlados"
+    ],
+    "precio": "$1.800.000 ARS",
+    "modalidad": "Presupuesto por etapas. Cotización personalizada según cantidad de módulos, complejidad, integraciones, volumen de usuarios e infraestructura requerida."
+  },
+  {
+    "id": 5,
+    "slug": "rediseno-rehacer-web",
+    "color": "yellow",
+    "numeroPlan": "PLAN 5",
+    "titulo": "Rediseño & Rehacer Web Existente",
+    "subtitulo": "Reconstrucción Estratégica de Sitio Actual",
+    "descripcion": "El Plan 5 está orientado a marcas y empresas que ya tienen una web, pero necesitan modernizarla, reorganizarla o mejorar su rendimiento. A veces lo correcto es reconstruir con criterio estratégico.",
+    "enfoque": "Análisis previo + rediseño estructural + mejora técnica.",
+    "paraQuien": [
+      "Empresas con webs desactualizadas",
+      "Negocios que cambiaron su enfoque",
+      "Sitios con problemas de rendimiento",
+      "Marcas que necesitan modernizar imagen",
+      "Proyectos que quieren mejorar sin perder posicionamiento"
+    ],
+    "proceso": [
+      {
+        "etapa": "Etapa 1",
+        "numero": "01",
+        "titulo": "Auditoría & Análisis",
+        "pasos": [
+          {
+            "titulo": "Revisión del sitio actual",
+            "descripcion": "Analizamos estructura, contenido y estado general del proyecto.",
+            "tag": "Auditoría"
+          },
+          {
+            "titulo": "Diagnóstico técnico",
+            "descripcion": "Evaluamos rendimiento, base técnica y oportunidades de mejora.",
+            "tag": "Técnico"
+          },
+          {
+            "titulo": "Definición de alcance",
+            "descripcion": "Determinamos si conviene rediseñar, rehacer o reconstruir por completo.",
+            "tag": "Scope"
+          }
+        ]
+      },
+      {
+        "etapa": "Etapa 2",
+        "numero": "02",
+        "titulo": "Rediseño UX/UI",
+        "pasos": [
+          {
+            "titulo": "Nueva estructura",
+            "descripcion": "Replanteamos secciones, jerarquías y navegación del sitio.",
+            "tag": "UX"
+          },
+          {
+            "titulo": "Mejora visual",
+            "descripcion": "Actualizamos la estética para una imagen más moderna y clara.",
+            "tag": "UI"
+          },
+          {
+            "titulo": "Ajustes y validación",
+            "descripcion": "Refinamos el rediseño hasta dejarlo listo para reconstrucción.",
+            "tag": "Validación"
+          }
+        ]
+      },
+      {
+        "etapa": "Etapa 3",
+        "numero": "03",
+        "titulo": "Reconstrucción Técnica",
+        "pasos": [
+          {
+            "titulo": "Nueva base optimizada",
+            "descripcion": "Rehacemos el sitio sobre una estructura más limpia y eficiente.",
+            "tag": "Código"
+          },
+          {
+            "titulo": "Performance y responsive",
+            "descripcion": "Optimizamos velocidad, estabilidad y adaptación a dispositivos.",
+            "tag": "Performance"
+          },
+          {
+            "titulo": "Publicación final",
+            "descripcion": "Lanzamos el sitio reconstruido y validado.",
+            "tag": "Launch"
+          }
+        ]
+      }
+    ],
+    "alcance": [
+      "Auditoría inicial",
+      "Redefinición de estructura",
+      "Hasta 5 secciones reconstruidas",
+      "Mejora visual completa",
+      "Optimización técnica",
+      "SEO estructural básico",
+      "Responsive completo",
+      "Hosting / dominio (si aplica)",
+      "SSL",
+      "Publicación final"
+    ],
+    "estructura": [
+      "Rehacer Home",
+      "Reorganizar secciones",
+      "Mejorar diseño visual",
+      "Optimizar velocidad",
+      "Actualizar contenido",
+      "Modernizar estructura"
+    ],
+    "tiempos": [
+      "Auditoría + Diseño: 5 a 7 días hábiles",
+      "Desarrollo: 7 a 12 días hábiles",
+      "Total estimado: 12 a 20 días hábiles"
+    ],
+    "revisiones": [
+      "2 a 3 rondas de ajustes en diseño",
+      "1 a 2 rondas post desarrollo"
+    ],
+    "precio": "$450.000 ARS",
+    "modalidad": "El valor final depende del estado actual del sitio, cantidad de secciones a rehacer, nivel de rediseño necesario y complejidad técnica."
+  }
+],"planDetail": {
+  "hero": {
+    "focusLabel": "ENFOQUE",
+    "modeLabel": "MODALIDAD",
+    "basePriceLabel": "PRECIO BASE",
+    "from": "Desde"
+  },
+  "timeline": {
+    "eyebrow": "Proceso del proyecto",
+    "title": "Cómo se desarrolla el plan",
+    "desc": "Cada proyecto sigue una estructura clara de fases para asegurar orden, validación y resultados consistentes."
+  },
+  "info": {
+    "scope": {
+      "title": "Alcance del plan",
+      "desc": "Todo lo que incluye esta propuesta dentro del desarrollo."
+    },
+    "forWho": {
+      "title": "¿Para quién es?",
+      "desc": "Perfiles ideales para este tipo de solución."
+    },
+    "structure": {
+      "title": "Estructura incluida",
+      "desc": "Secciones base contempladas dentro del proyecto."
+    },
+    "times": {
+      "title": "Tiempos estimados",
+      "desc": "Referencia general del tiempo proyectado para cada etapa."
+    },
+    "revisions": {
+      "title": "Revisiones incluidas",
+      "desc": "Instancias contempladas para ajustar y validar el proyecto."
+    }
+  },
+  "cta": {
+    "kicker": "Siguiente paso",
+    "title": "Llevemos este plan a tu proyecto",
+    "text": "Definimos el alcance real, ajustamos prioridades y te armamos una propuesta clara según tus objetivos.",
+    "button": "Solicitar este plan"
+  }
+}
+
 }

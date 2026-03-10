@@ -99,14 +99,14 @@ const active = computed(() =>
  * src/assets/Metodos/Paso2.mp4
  * ...
  */
-const videos = import.meta.glob("@/assets/Metodos/*.mp4", {
+const videos = import.meta.glob("@/assets/Metodos/*.webm", {
   eager: true,
   import: "default"
 });
 
 const activeVideo = computed(() => {
   const stepNumber = active.value.id;
-  return videos[`/src/assets/Metodos/Paso${stepNumber}.mp4`] || "";
+  return videos[`/src/assets/Metodos/paso${stepNumber}.webm`] || "";
 });
 
 const tabRefs = ref([]);

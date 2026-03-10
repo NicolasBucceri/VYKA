@@ -4,94 +4,52 @@
       <!-- HEADER -->
       <header class="planes-header">
         <h2 class="planes-title">
-          ¿Qué <span>servicios</span> ofrecemos?
+          {{ t("planes.title") }} <span>{{ t("planes.titleAccent") }}</span>
+          {{ t("planes.titleEnd") }}
         </h2>
       </header>
 
       <!-- GRID -->
       <div class="planes-grid">
-        <CardPlan
-          v-for="plan in planes"
-          :key="plan.plan"
-          :plan="plan.plan"
-          :titulo="plan.titulo"
-          :precio="plan.precio"
-          :features="plan.features"
-          :recomendado="plan.recomendado"
-          :video="plan.video"
-        />
+<CardPlan
+  v-for="plan in planes"
+  :key="plan.plan"
+  :plan="plan.plan"
+  :slug="plan.slug"
+  :titulo="plan.titulo"
+  :precio="formatearPrecio(plan)"
+  :moneda="moneda"
+  :features="plan.features"
+  :recomendado="plan.recomendado"
+  :video="plan.recomendado ? videoPlan : null"
+/>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { computed } from "vue";
 import CardPlan from "@/components/ui/CardPlan.vue";
-import videoPlan from "@/assets/Planes/PlanRecomendado.mp4";
+import videoPlan from "@/assets/Planes/PlanRecomendado.webm";
+import { useLang } from "@/composables/useLang";
 
-const planes = [
-  {
-    plan: 1,
-    titulo: "Diseño Web Económico",
-    precio: 350000,
-    features: [
-      "Diseño web profesional a medida",
-      "Hasta 5 secciones personalizadas",
-      "Optimizada para mobile (responsive)",
-      "Integración con WhatsApp y redes"
-    ],
-  },
+const { t, lang } = useLang();
 
-  {
-    plan: 2,
-    titulo: "Diseño Web Profesional",
-    precio: 550000,
-    recomendado: true,
-    video: videoPlan,
-    features: [
-      "Diseño UX/UI profesional a medida",
-      "Panel autoadministrable (CMS)",
-      "Formularios y generación de consultas",
-      "SEO estructural optimizado"
-    ],
-  },
+const planes = computed(() => t("planes.items"));
 
-  {
-    plan: 3,
-    titulo: "E-commerce Profesional",
-    precio: 850000,
-    features: [
-      "Tienda online autoadministrable",
-      "Carrito y checkout optimizado",
-      "Pagos y envíos integrados",
-      "Gestión de productos y pedidos"
-    ],
-  },
+const moneda = computed(() => {
+  return lang.value === "en" ? "USD" : "ARS";
+});
 
-  {
-    plan: 5,
-    titulo: "Corporativa & Sistemas a Medida",
-    precio: 1800000,
-    features: [
-      "Desarrollo web y sistema a medida",
-      "Panel administrativo personalizado",
-      "Gestión de usuarios y permisos",
-      "Arquitectura preparada para escalar"
-    ],
-  },
+const formatearPrecio = (plan) => {
+  const isEnglish = lang.value === "en";
+  const amount = isEnglish ? plan.precioUSD : plan.precioARS;
 
-  {
-    plan: 6,
-    titulo: "Rediseño y Optimización Web",
-    precio: 450000,
-    features: [
-      "Auditoría completa de la web actual",
-      "Rediseño UX/UI moderno",
-      "Optimización de velocidad y SEO",
-      "Migración segura del contenido"
-    ],
-  },
-];
+  return new Intl.NumberFormat(isEnglish ? "en-US" : "es-AR", {
+    maximumFractionDigits: 0,
+  }).format(amount);
+};
 </script>
 
 <style scoped>
@@ -111,8 +69,16 @@ const planes = [
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(900px 500px at 0% 100%, rgba(109, 93, 246, 0.2), transparent 60%),
-    radial-gradient(900px 500px at 100% 100%, rgba(45, 140, 255, 0.12), transparent 60%);
+    radial-gradient(
+      900px 500px at 0% 100%,
+      rgba(109, 93, 246, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 100% 100%,
+      rgba(45, 140, 255, 0.12),
+      transparent 60%
+    );
 }
 
 .planes-inner {
@@ -136,22 +102,96 @@ const planes = [
   color: #6d5df6;
 }
 
+/* =========================
+   GRID DESKTOP
+========================= */
 .planes-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 26px;
+  align-items: stretch;
 }
 
 /* centra la última card si queda sola */
 .planes-grid > *:last-child:nth-child(odd) {
   grid-column: span 2;
   justify-self: center;
-  width: 50%;
+  width: min(100%, 50%);
 }
 
-@media (max-width: 900px) {
+/* =========================
+   TABLET / SMALL DESKTOP
+   (todavía pueden entrar 2)
+========================= */
+@media (max-width: 1024px) and (min-width: 861px) {
+  .planes {
+    padding: 80px 0 95px;
+  }
+
+  .planes-header {
+    margin-bottom: 30px;
+  }
+
+  .planes-title {
+    font-size: clamp(1.8rem, 4vw, 2.1rem);
+  }
+
+  .planes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .planes-grid > *:last-child:nth-child(odd) {
+    grid-column: span 2;
+    justify-self: center;
+    width: min(100%, 48%);
+  }
+}
+
+/* =========================
+   TABLET CHICA + MOBILE
+   (1 card debajo de la otra)
+========================= */
+@media (max-width: 860px) {
+  .planes {
+    padding: 70px 0 85px;
+  }
+
+  .planes-inner {
+    width: min(100%, 92%);
+  }
+
+  .planes-header {
+    margin-bottom: 24px;
+  }
+
+  .planes-title {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    line-height: 1.15;
+  }
+
   .planes-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .planes-grid > *:last-child:nth-child(odd) {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+  }
+}
+
+/* =========================
+   MOBILE CHICO
+========================= */
+@media (max-width: 520px) {
+  .planes {
+    padding: 60px 0 75px;
+  }
+
+  .planes-title {
+    font-size: clamp(1.45rem, 8vw, 1.8rem);
   }
 }
 </style>

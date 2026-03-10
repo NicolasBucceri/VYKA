@@ -1,11 +1,6 @@
 <!-- src/components/Empresa/03-Equipo.vue -->
 <template>
-  <section
-    class="empresa-equipo"
-    id="equipo"
-    aria-label="Nuestro equipo"
-    ref="rootRef"
-  >
+  <section class="empresa-equipo" id="equipo" aria-label="Nuestro equipo" ref="rootRef">
     <div class="wrap">
       <header class="head">
         <p class="kicker" data-reveal style="--d: 0ms">NUESTRO EQUIPO</p>
@@ -21,18 +16,9 @@
       </header>
 
       <div class="grid" role="list" aria-label="Miembros del equipo">
-        <a
-          v-for="(m, i) in team"
-          :key="m.name"
-          class="card"
-          role="listitem"
-          :href="m.linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-          :aria-label="`Abrir LinkedIn de ${m.name}`"
-          data-reveal
-          :style="`--d:${220 + i * 90}ms`"
-        >
+        <a v-for="(m, i) in team" :key="m.name" class="card" role="listitem" :href="m.linkedin" target="_blank"
+          rel="noopener noreferrer" :aria-label="`Abrir LinkedIn de ${m.name}`" data-reveal
+          :style="`--d:${220 + i * 90}ms`">
           <span class="card-grid" aria-hidden="true"></span>
           <span class="card-glow" aria-hidden="true"></span>
 
@@ -70,7 +56,7 @@ const team = [
       "Lidera la arquitectura técnica y el desarrollo, y acompaña la estrategia y el vínculo comercial con el cliente.",
     focus1: "Arquitectura técnica",
     focus2: "Estrategia y gestión",
-    avatar: new URL("@/assets/Empresa/Nico.jpg", import.meta.url).href,
+    avatar: new URL("@/assets/Empresa/Nico.webp", import.meta.url).href,
     linkedin: "https://www.linkedin.com/in/nicolasbucceri/",
   },
   {
@@ -80,7 +66,7 @@ const team = [
       "Define la experiencia y el lenguaje visual, y participa en la estrategia y el contacto con el cliente.",
     focus1: "UX y usabilidad",
     focus2: "UI y diseño visual",
-    avatar: new URL("@/assets/Empresa/Caro.jpg", import.meta.url).href,
+    avatar: new URL("@/assets/Empresa/Caro.webp", import.meta.url).href,
     linkedin: "https://www.linkedin.com/in/carolina-yael-sosa-1ba4a91b5/",
   },
   {
@@ -90,7 +76,7 @@ const team = [
       "Implementa interfaces con detalle, aporta soporte técnico y acompaña el proceso comercial cuando hace falta.",
     focus1: "Front-End",
     focus2: "Microinteracciones",
-    avatar: new URL("@/assets/Empresa/Alan.jpeg", import.meta.url).href,
+    avatar: new URL("@/assets/Empresa/Alan.webp", import.meta.url).href,
     linkedin: "https://www.linkedin.com/in/tu-linkedin-alan",
   },
 ];
@@ -348,9 +334,9 @@ onBeforeUnmount(() => {
   transform: translateY(14px);
   filter: blur(6px);
   transition:
-    opacity 700ms cubic-bezier(.2,.8,.2,1),
-    transform 700ms cubic-bezier(.2,.8,.2,1),
-    filter 700ms cubic-bezier(.2,.8,.2,1);
+    opacity 700ms cubic-bezier(.2, .8, .2, 1),
+    transform 700ms cubic-bezier(.2, .8, .2, 1),
+    filter 700ms cubic-bezier(.2, .8, .2, 1);
   transition-delay: var(--d, 0ms);
   will-change: transform, opacity, filter;
 }
@@ -365,6 +351,7 @@ onBeforeUnmount(() => {
 .card[data-reveal] {
   transform: translateY(18px) scale(.985);
 }
+
 .card[data-reveal].is-in {
   transform: translateY(0) scale(1);
 }
@@ -376,8 +363,17 @@ onBeforeUnmount(() => {
 }
 
 @keyframes glowBreath {
-  0%, 100% { filter: blur(0px); opacity: .7; }
-  50% { filter: blur(1.2px); opacity: .95; }
+
+  0%,
+  100% {
+    filter: blur(0px);
+    opacity: .7;
+  }
+
+  50% {
+    filter: blur(1.2px);
+    opacity: .95;
+  }
 }
 
 /* Pills: aparecen en cascada */
@@ -385,11 +381,18 @@ onBeforeUnmount(() => {
   opacity: 0;
   transform: translateY(8px);
   transition:
-    opacity 520ms cubic-bezier(.2,.8,.2,1),
-    transform 520ms cubic-bezier(.2,.8,.2,1);
+    opacity 520ms cubic-bezier(.2, .8, .2, 1),
+    transform 520ms cubic-bezier(.2, .8, .2, 1);
 }
-.card.is-in .pill:nth-child(1) { transition-delay: 140ms; }
-.card.is-in .pill:nth-child(2) { transition-delay: 210ms; }
+
+.card.is-in .pill:nth-child(1) {
+  transition-delay: 140ms;
+}
+
+.card.is-in .pill:nth-child(2) {
+  transition-delay: 210ms;
+}
+
 .card.is-in .pill {
   opacity: 1;
   transform: translateY(0);
@@ -403,6 +406,7 @@ onBeforeUnmount(() => {
     filter: none !important;
     transition: none !important;
   }
+
   .card.is-in .card-glow {
     animation: none !important;
   }

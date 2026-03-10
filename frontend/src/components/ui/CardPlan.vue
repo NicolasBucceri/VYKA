@@ -9,7 +9,7 @@
       loop
       playsinline
     >
-      <source :src="video" type="video/mp4" />
+      <source :src="video" type="video/webm" />
     </video>
 
     <!-- overlay -->
@@ -17,22 +17,16 @@
 
     <!-- contenido -->
     <div class="card-content">
-      <div class="card-top">
-        <span class="plan">Plan {{ plan }}</span>
-
-        <span v-if="recomendado" class="badge">
-          Recomendado
-        </span>
-      </div>
-
       <h3 class="title">{{ titulo }}</h3>
 
       <div class="line"></div>
 
-      <p class="desde">Desde</p>
+      <p class="desde">
+        {{ t("planes.desde") }}
+      </p>
 
       <h2 class="precio">
-        {{ formatPrice(precio) }} <span>ARS</span>
+        {{ precio }} <span>{{ moneda }}</span>
       </h2>
 
       <ul class="features">
@@ -42,29 +36,35 @@
       </ul>
 
       <p class="nota">
-        Inversión única · Sin costos mensuales
+        {{ t("planes.nota") }}
       </p>
 
-      <button class="btn">
-        Saber más
-      </button>
+      <!-- BOTON UI -->
+<router-link :to="`/planes/${slug}`" class="card-btn-link">
+  <BotonSecundario class="card-btn">
+    {{ t("planes.btnMas") }}
+  </BotonSecundario>
+</router-link>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useLang } from "@/composables/useLang";
+import BotonSecundario from "@/components/ui/BotonSecundario.vue";
+
+const { t } = useLang();
+
 defineProps({
   plan: Number,
+  slug: String,
   titulo: String,
-  precio: Number,
+  precio: String,
+  moneda: String,
   features: Array,
   recomendado: Boolean,
   video: String,
 });
-
-const formatPrice = (value) => {
-  return new Intl.NumberFormat("es-AR").format(value);
-};
 </script>
 
 <style scoped>
@@ -80,6 +80,7 @@ const formatPrice = (value) => {
   border: 1px solid rgba(45, 140, 255, 0.4);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 40px rgba(45, 140, 255, 0.15);
+  min-height: 100%;
 }
 
 .card.recomendado {
@@ -107,32 +108,15 @@ const formatPrice = (value) => {
   z-index: 1;
 }
 
+/* =========================
+   CONTENT
+========================= */
 .card-content {
   position: relative;
   z-index: 2;
-}
-
-.card-top {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-
-.plan {
-  font-size: 12px;
-  color: #aaa;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.badge {
-  background: #e66a27;
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
+  flex-direction: column;
+  height: 100%;
 }
 
 .title {
@@ -140,8 +124,12 @@ const formatPrice = (value) => {
   font-size: 22px;
   color: #fff;
   line-height: 1.2;
+  text-wrap: balance;
 }
 
+/* =========================
+   LINE
+========================= */
 .line {
   height: 2px;
   background: linear-gradient(to right, #2d8cff, transparent);
@@ -152,6 +140,9 @@ const formatPrice = (value) => {
   background: linear-gradient(to right, #e66a27, transparent);
 }
 
+/* =========================
+   PRICE
+========================= */
 .desde {
   font-size: 12px;
   color: #aaa;
@@ -161,6 +152,10 @@ const formatPrice = (value) => {
 }
 
 .precio {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
   font-size: clamp(1.8rem, 3vw, 2.2rem);
   color: #2d8cff;
   line-height: 1;
@@ -176,6 +171,9 @@ const formatPrice = (value) => {
   margin-left: 4px;
 }
 
+/* =========================
+   FEATURES
+========================= */
 .features {
   margin: 15px 0 20px;
   padding-left: 18px;
@@ -187,6 +185,9 @@ const formatPrice = (value) => {
   line-height: 1.45;
 }
 
+/* =========================
+   NOTE
+========================= */
 .nota {
   font-size: 12px;
   color: #777;
@@ -194,26 +195,137 @@ const formatPrice = (value) => {
   text-align: center;
 }
 
-.btn {
+/* =========================
+   BUTTON
+========================= */
+.card-btn-link {
+  display: block;
+  margin-top: auto;
+}
+
+.card-btn {
   width: 100%;
-  padding: 12px;
-  border-radius: 999px;
-  border: 1px solid #2d8cff;
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.25s ease;
 }
 
-.card.recomendado .btn {
-  border-color: #e66a27;
+/* =========================
+   TABLET / SMALL DESKTOP
+   (2 cards todavía entran)
+========================= */
+@media (max-width: 1024px) and (min-width: 861px) {
+  .card {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .title {
+    font-size: 1.15rem;
+    line-height: 1.2;
+    margin: 8px 0;
+  }
+
+  .desde {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .precio {
+    font-size: clamp(1.55rem, 3vw, 1.85rem);
+    margin-bottom: 14px;
+    gap: 6px;
+  }
+
+  .precio span {
+    font-size: 0.88rem;
+    margin-left: 0;
+  }
+
+  .features {
+    margin: 12px 0 16px;
+    padding-left: 18px;
+  }
+
+  .features li {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .nota {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
 }
 
-.btn:hover {
-  background: #2d8cff;
+/* =========================
+   TABLET CHICA + MOBILE
+   (1 card debajo de la otra)
+========================= */
+@media (max-width: 860px) {
+  .card {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin: 8px 0;
+  }
+
+  .desde {
+    font-size: 11px;
+  }
+
+  .precio {
+    font-size: clamp(1.6rem, 8vw, 1.95rem);
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .precio span {
+    font-size: 0.9rem;
+    margin-left: 0;
+  }
+
+  .features {
+    padding-left: 18px;
+    margin: 12px 0 18px;
+  }
+
+  .features li {
+    font-size: 0.95rem;
+    margin-bottom: 7px;
+    line-height: 1.45;
+  }
+
+  .nota {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+
+  .card-video {
+    object-fit: cover;
+  }
 }
 
-.card.recomendado .btn:hover {
-  background: #e66a27;
+/* =========================
+   MOBILE CHICO
+========================= */
+@media (max-width: 520px) {
+  .card {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .precio {
+    font-size: clamp(1.45rem, 8.5vw, 1.8rem);
+  }
+
+  .features li {
+    font-size: 0.92rem;
+  }
 }
 </style>

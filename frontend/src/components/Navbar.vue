@@ -2,46 +2,27 @@
   <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
     <div class="container">
       <!-- Logo -->
-      <router-link
-        class="navbar-brand"
-        to="/"
-        :aria-label="t('navbar.homeAria')"
-        @click="closeOffcanvas"
-      >
+      <router-link class="navbar-brand" to="/" :aria-label="t('navbar.homeAria')" @click="closeOffcanvas">
         <img src="@/assets/Logo/Logo.svg" alt="VYKA Logo" class="logo" />
       </router-link>
 
       <!-- Toggle -->
-      <button
-        class="navbar-toggler shadow-none border-0"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar"
-        :aria-label="t('navbar.toggleAria')"
-      >
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" :aria-label="t('navbar.toggleAria')">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- Sidebar -->
-      <div
-        class="offcanvas offcanvas-end sidebar"
-        tabindex="-1"
-        id="offcanvasNavbar"
-        aria-labelledby="offcanvasNavbarLabel"
-      >
+      <div class="offcanvas offcanvas-end sidebar" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
         <!-- Header -->
         <div class="offcanvas-header border-bottom">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
             <img src="@/assets/Logo/Logo.svg" alt="VYKA Logo" class="logo-sidebar" />
           </h5>
 
-          <button
-            type="button"
-            class="btn-close btn-close-white shadow-none"
-            data-bs-dismiss="offcanvas"
-            :aria-label="t('navbar.closeAria')"
-          ></button>
+          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+            :aria-label="t('navbar.closeAria')"></button>
         </div>
 
         <!-- Body -->
@@ -55,45 +36,26 @@
 
             <!-- ✅ Servicios -> Home + #planes -->
             <li class="nav-item">
-              <router-link
-                class="nav-link"
-                :to="{ path: '/', hash: '#planes' }"
-                :class="linkClassServicios()"
-                @click="closeOffcanvas"
-              >
+              <router-link class="nav-link" :to="{ path: '/', hash: '#planes' }" :class="linkClassServicios()"
+                @click="closeOffcanvas">
                 {{ t("navbar.servicios") }}
               </router-link>
             </li>
 
             <li class="nav-item">
-              <router-link
-                class="nav-link"
-                to="/proyectos"
-                :class="linkClass('/proyectos')"
-                @click="closeOffcanvas"
-              >
+              <router-link class="nav-link" to="/proyectos" :class="linkClass('/proyectos')" @click="closeOffcanvas">
                 {{ t("navbar.proyectos") }}
               </router-link>
             </li>
 
             <li class="nav-item">
-              <router-link
-                class="nav-link"
-                to="/empresa"
-                :class="linkClass('/empresa')"
-                @click="closeOffcanvas"
-              >
+              <router-link class="nav-link" to="/empresa" :class="linkClass('/empresa')" @click="closeOffcanvas">
                 {{ t("navbar.empresa") }}
               </router-link>
             </li>
 
             <li class="nav-item">
-              <router-link
-                class="nav-link"
-                to="/contacto"
-                :class="linkClass('/contacto')"
-                @click="closeOffcanvas"
-              >
+              <router-link class="nav-link" to="/contacto" :class="linkClass('/contacto')" @click="closeOffcanvas">
                 {{ t("navbar.contacto") }}
               </router-link>
             </li>
@@ -103,23 +65,13 @@
           <div class="lang-switch d-none d-lg-flex" role="group" :aria-label="t('navbar.langAria')">
             <i class="fa-solid fa-globe lang-icon" aria-hidden="true"></i>
 
-            <button
-              type="button"
-              class="lang-pill"
-              :class="{ active: lang === 'es' }"
-              @click="setLang('es')"
-            >
+            <button type="button" class="lang-pill" :class="{ active: lang === 'es' }" @click="setLang('es')">
               ES
             </button>
 
             <span class="lang-divider">|</span>
 
-            <button
-              type="button"
-              class="lang-pill"
-              :class="{ active: lang === 'en' }"
-              @click="setLang('en')"
-            >
+            <button type="button" class="lang-pill" :class="{ active: lang === 'en' }" @click="setLang('en')">
               EN
             </button>
           </div>
@@ -128,23 +80,13 @@
           <div class="lang-switch d-lg-none mt-3" role="group" :aria-label="t('navbar.langAria')">
             <i class="fa-solid fa-globe lang-icon" aria-hidden="true"></i>
 
-            <button
-              type="button"
-              class="lang-pill"
-              :class="{ active: lang === 'es' }"
-              @click="setLang('es')"
-            >
+            <button type="button" class="lang-pill" :class="{ active: lang === 'es' }" @click="setLang('es')">
               ES
             </button>
 
             <span class="lang-divider">|</span>
 
-            <button
-              type="button"
-              class="lang-pill"
-              :class="{ active: lang === 'en' }"
-              @click="setLang('en')"
-            >
+            <button type="button" class="lang-pill" :class="{ active: lang === 'en' }" @click="setLang('en')">
               EN
             </button>
           </div>
