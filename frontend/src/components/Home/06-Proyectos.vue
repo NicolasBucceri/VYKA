@@ -1,41 +1,24 @@
 <template>
   <Vyka>
-    <section
-      class="proyectos"
-      id="proyectos"
-      :aria-label="t('proyectosHome.aria')"
-    >
+    <section class="proyectos" id="proyectos" :aria-label="t('projectsSection.ariaLabel')">
       <div class="proyectos-inner">
         <!-- HEADER -->
-        <header class="proyectos-head">
-          <p class="kicker">{{ t("proyectosHome.kicker") }}</p>
-          <h2 class="title">
-            {{ t("proyectosHome.titleLine1") }}<br />
-            {{ t("proyectosHome.titleLine2") }}
-          </h2>
-        </header>
+<p>{{ t("projectsSection.kicker") }}</p>
+<h1>
+  <span>{{ t("projectsSection.title") }}</span>
+  <span>{{ t("projectsSection.titleAccent") }}</span>
+</h1>
+<p>{{ t("projectsSection.triad.strategy") }}</p>
 
         <!-- CARDS -->
         <div class="cards">
-          <ProjectCard
-            v-for="(p, i) in proyectos"
-            :key="p.slug"
-            :data="p"
-            :active="activeIndex === i"
-            :index="i"
-            :is-mobile="isMobile"
-            @enter="setActive(i)"
-            @toggle="toggleCard(i)"
-          />
+          <ProjectCard v-for="(p, i) in proyectos" :key="p.slug" :data="p" :active="activeIndex === i" :index="i"
+            :is-mobile="isMobile" @enter="setActive(i)" @toggle="toggleCard(i)" />
         </div>
 
         <!-- CTA -->
         <div class="cta-row">
-          <BotonPrimario
-            size="lg"
-            icon="→"
-            @click="goToProyectos"
-          >
+          <BotonPrimario size="lg" icon="→" @click="goToProyectos">
             {{ t("proyectosHome.cta") }}
           </BotonPrimario>
         </div>

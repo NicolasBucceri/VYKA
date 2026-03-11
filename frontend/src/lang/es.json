@@ -806,22 +806,15 @@
     "text": "Definimos el alcance real, ajustamos prioridades y te armamos una propuesta clara según tus objetivos.",
     "button": "Solicitar este plan"
   }
-}, "projectsSection": {
-    "ariaLabel": "Proyectos de VYKA",
-    "kicker": "PROYECTOS FINALIZADOS",
-    "title": "Nuestros",
-    "titleAccent": "proyectos",
-    "workApproachAria": "Enfoque de trabajo",
-    "triad": {
-      "strategy": "Estrategia",
-      "design": "Diseño",
-      "development": "Desarrollo",
-      "results": "Resultados"
-    },
-    "openProjectAria": "Abrir proyecto {name}",
-    "previewAlt": "Preview de {name}",
-    "viewProject": "Ver proyecto"
-  },  "projectsPage": {
+}, 
+  "projectsPage": {
+      "kicker": "PROYECTOS FINALIZADOS",
+  "titleWhite": "Nuestros",
+  "titleGrad": "proyectos",
+  "triad1": "Estrategia",
+  "triad2": "Diseño",
+  "triad3": "Desarrollo",
+  "triad4": "Resultados",
     "viewProject": "Ver proyecto"
   }, "projectDetail": {
     "heroAria": "Hero del proyecto",

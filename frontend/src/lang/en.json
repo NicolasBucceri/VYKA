@@ -892,22 +892,14 @@
     "text": "We define the real scope, adjust priorities, and prepare a clear proposal based on your goals.",
     "button": "Request this plan"
   }
-}, "projectsSection": {
-    "ariaLabel": "VYKA projects",
-    "kicker": "COMPLETED PROJECTS",
-    "title": "Our",
-    "titleAccent": "projects",
-    "workApproachAria": "Work approach",
-    "triad": {
-      "strategy": "Strategy",
-      "design": "Design",
-      "development": "Development",
-      "results": "Results"
-    },
-    "openProjectAria": "Open project {name}",
-    "previewAlt": "{name} preview",
-    "viewProject": "View project"
   },   "projectsPage": {
+      "kicker": "COMPLETED PROJECTS",
+  "titleWhite": "Our",
+  "titleGrad": "projects",
+  "triad1": "Strategy",
+  "triad2": "Design",
+  "triad3": "Development",
+  "triad4": "Results",
     "viewProject": "View project"
   },
   "projectDetail": {

@@ -172,7 +172,7 @@ const { t } = useLang();
 
 const year = new Date().getFullYear();
 
-const email = "vykastudio@hotmail.com";
+const email = "vykastudio@gmail.com";
 const waText = "+54 11 2615-4277";
 
 const instagramUrl = "https://www.instagram.com/vyka.studios";
