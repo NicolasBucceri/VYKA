@@ -1,6 +1,10 @@
 <template>
-  <section class="resultados" v-if="proyecto" aria-label="Resultados del proyecto" ref="sectionEl">
-    <!-- bg sutil -->
+  <section
+    class="resultados"
+    v-if="proyecto"
+    :aria-label="t('projectDetail.resultsAria')"
+    ref="sectionEl"
+  >
     <div class="bg" aria-hidden="true">
       <span class="glow g1"></span>
       <span class="glow g2"></span>
@@ -8,12 +12,11 @@
     </div>
 
     <div class="wrap">
-      <!-- Head -->
       <header class="head" data-reveal="up">
         <p class="kicker">{{ ui.kicker }}</p>
 
         <h2 class="title">
-          <span class="tWhite">{{ ui.titleWhite }}</span> <br>
+          <span class="tWhite">{{ ui.titleWhite }}</span> <br />
           <span class="grad">{{ ui.titleGrad }}</span>
         </h2>
 
@@ -22,26 +25,27 @@
         </p>
       </header>
 
-      <!-- Metrics -->
       <div class="grid" v-if="metricas.length" data-reveal="up">
-        <div class="card" v-for="(m, i) in metricas" :key="i" :style="{ '--d': i }">
+        <div
+          class="card"
+          v-for="(m, i) in metricas"
+          :key="i"
+          :style="{ '--d': i }"
+        >
           <span class="number">{{ m.valor }}</span>
           <p class="label">{{ m.label }}</p>
           <p class="time" v-if="m.tiempo">{{ m.tiempo }}</p>
         </div>
       </div>
 
-      <!-- Fallback -->
       <p class="empty" v-else data-reveal="up">
         {{ ui.empty }}
       </p>
 
-      <!-- ✅ Ficha (hijo) -->
       <div class="fichaWrap" data-reveal="up">
-        <FichaEntrega :ficha="proyecto?.ficha" />
+        <FichaEntrega :ficha="proyecto?.fichaResolved" />
       </div>
 
-      <!-- Descripción -->
       <p class="desc" v-if="metricas.length" data-reveal="up">
         {{ ui.desc }}
       </p>
@@ -52,48 +56,29 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import FichaEntrega from "@/components/Proyectos/04-FichaEntrega.vue";
+import { useLang } from "@/composables/useLang";
+
+const { t } = useLang();
 
 const props = defineProps({
   proyecto: { type: Object, required: true },
 });
 
-/* -----------------------
-   Métricas por proyecto
------------------------- */
 const metricas = computed(() => props.proyecto?.resultados ?? []);
-
-/* -----------------------
-   Textos (por proyecto si querés)
-   - Si no existen, usa defaults.
-   - Si los querés custom por proyecto:
-     proyecto.resultadosUI = { ... }
------------------------- */
-const DEFAULT_UI = {
-  kicker: "RESULTADOS",
-  titleWhite: "Impacto real.",
-  titleGrad: "Resultados medibles.",
-  sub:
-    "Cada proyecto busca algo simple: mejorar presencia, generar más consultas y construir una base digital sólida.",
-  empty: "Resultados en proceso de medición.",
-  desc:
-    "El objetivo no es solo tener una web visualmente atractiva. El objetivo es construir una presencia digital clara, profesional y preparada para generar oportunidades reales.",
-};
 
 const ui = computed(() => {
   const cfg = props.proyecto?.resultadosUI || {};
+
   return {
-    kicker: cfg.kicker || DEFAULT_UI.kicker,
-    titleWhite: cfg.titleWhite || DEFAULT_UI.titleWhite,
-    titleGrad: cfg.titleGrad || DEFAULT_UI.titleGrad,
-    sub: cfg.sub || DEFAULT_UI.sub,
-    empty: cfg.empty || DEFAULT_UI.empty,
-    desc: cfg.desc || DEFAULT_UI.desc,
+    kicker: cfg.kicker || t("projectDetail.resultsKicker"),
+    titleWhite: cfg.titleWhite || t("projectDetail.resultsTitleWhite"),
+    titleGrad: cfg.titleGrad || t("projectDetail.resultsTitleGrad"),
+    sub: cfg.sub || t("projectDetail.resultsSub"),
+    empty: cfg.empty || t("projectDetail.resultsEmpty"),
+    desc: cfg.desc || t("projectDetail.resultsDesc"),
   };
 });
 
-/* -----------------------
-   Reveal on scroll (nativo)
------------------------- */
 const sectionEl = ref(null);
 let io = null;
 

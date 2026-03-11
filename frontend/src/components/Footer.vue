@@ -1,50 +1,93 @@
 <!-- src/components/FooterVyka.vue -->
 <template>
-  <footer class="vyka-footer" aria-label="Footer Vyka">
+  <footer class="vyka-footer" :aria-label="t('footer.ariaLabel')">
     <div class="wrap">
       <!-- Top -->
       <div class="top">
         <!-- Brand -->
         <div class="brand">
-          <router-link class="logo" to="/" aria-label="Ir al inicio">
+          <router-link class="logo" to="/" :aria-label="t('footer.goHome')">
             <img src="@/assets/Logo/Logo.svg" alt="VYKA Logo" class="logoImg" />
           </router-link>
 
           <p class="desc">
-            Diseñamos y desarrollamos productos digitales con foco en UX/UI, performance y estética premium.
+            {{ t("footer.desc") }}
           </p>
 
-          <div class="chips" aria-label="Diferenciales">
-            <span class="chip"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> UX/UI</span>
-            <span class="chip"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Performance</span>
-            <span class="chip"><i class="fa-solid fa-code" aria-hidden="true"></i> Full-Stack</span>
+          <div class="chips" :aria-label="t('footer.differentials')">
+            <span class="chip">
+              <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+              UX/UI
+            </span>
+            <span class="chip">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+              {{ t("footer.performance") }}
+            </span>
+            <span class="chip">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              Full-Stack
+            </span>
           </div>
         </div>
 
         <!-- Columns -->
-        <nav class="col" aria-label="Secciones">
-          <h4 class="title">Secciones</h4>
+        <nav class="col" :aria-label="t('footer.sectionsAria')">
+          <h4 class="title">{{ t("footer.sections") }}</h4>
           <ul class="list">
-            <li><a class="link" href="#servicios"><i class="fa-solid fa-layer-group"></i> Servicios</a></li>
-            <li><a class="link" href="#metodo"><i class="fa-solid fa-diagram-project"></i> Método</a></li>
-            <li><a class="link" href="#proyectos"><i class="fa-solid fa-briefcase"></i> Proyectos</a></li>
-            <li><a class="link" href="#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+            <li>
+              <router-link class="link" :to="{ path: '/', hash: '#servicios' }">
+                <i class="fa-solid fa-layer-group"></i>
+                {{ t("footer.services") }}
+              </router-link>
+            </li>
+
+            <li>
+              <router-link class="link" :to="{ path: '/', hash: '#metodo' }">
+                <i class="fa-solid fa-diagram-project"></i>
+                {{ t("footer.method") }}
+              </router-link>
+            </li>
+
+            <li>
+              <router-link class="link" :to="{ path: '/', hash: '#proyectos' }">
+                <i class="fa-solid fa-briefcase"></i>
+                {{ t("footer.projects") }}
+              </router-link>
+            </li>
+
+            <li>
+              <router-link class="link" :to="{ path: '/', hash: '#contacto' }">
+                <i class="fa-solid fa-envelope"></i>
+                {{ t("footer.contact") }}
+              </router-link>
+            </li>
           </ul>
         </nav>
 
-        <nav class="col" aria-label="Recursos">
-          <h4 class="title">Recursos</h4>
+        <nav class="col" :aria-label="t('footer.resourcesAria')">
+          <h4 class="title">{{ t("footer.resources") }}</h4>
           <ul class="list">
-            <li><a class="link" href="#planes"><i class="fa-solid fa-tags"></i> Planes</a></li>
-            <li><a class="link" href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+            <li>
+              <router-link class="link" :to="{ path: '/', hash: '#planes' }">
+                <i class="fa-solid fa-tags"></i>
+                {{ t("footer.plans") }}
+              </router-link>
+            </li>
+
+            <li>
+              <router-link class="link" :to="{ path: '/', hash: '#faq' }">
+                <i class="fa-solid fa-circle-question"></i>
+                FAQ
+              </router-link>
+            </li>
           </ul>
         </nav>
 
         <!-- Contact + Social -->
         <div class="contact">
-          <h4 class="title">Hablemos</h4>
+          <h4 class="title">{{ t("footer.letsTalk") }}</h4>
 
-          <a class="contactCard" :href="waLink" target="_blank" rel="noopener">
+          <a class="contactCard" :href="waLink" target="_blank" rel="noopener noreferrer">
             <div class="icon">
               <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
             </div>
@@ -60,20 +103,32 @@
               <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             </div>
             <div class="meta">
-              <span class="label">Email</span>
+              <span class="label">{{ t("footer.email") }}</span>
               <span class="value">{{ email }}</span>
             </div>
             <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
           </a>
 
-          <!-- Social centrado y alineado con las cards -->
-          <div class="socialWrap" aria-label="Redes">
+          <!-- Social -->
+          <div class="socialWrap" :aria-label="t('footer.social')">
             <div class="social">
-              <a class="socialBtn" href="#" aria-label="Instagram">
+              <a
+                class="socialBtn"
+                :href="instagramUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                :aria-label="t('footer.instagram')"
+              >
                 <i class="fa-brands fa-instagram"></i>
               </a>
 
-              <a class="socialBtn" href="#" aria-label="Facebook">
+              <a
+                class="socialBtn"
+                :href="facebookUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                :aria-label="t('footer.facebook')"
+              >
                 <i class="fa-brands fa-facebook-f"></i>
               </a>
             </div>
@@ -87,17 +142,21 @@
       <!-- Bottom -->
       <div class="bottom">
         <p class="copy">
-          © {{ year }} VYKA Studio. Todos los derechos reservados.
+          © {{ year }} VYKA Studio. {{ t("footer.rights") }}
         </p>
 
-        <!-- ✅ ahora texto, no links -->
-        <p class="legalText" aria-label="Legal">
-          Privacidad • Términos
-        </p>
+        <div class="legalLinks" :aria-label="t('footer.legal')">
+          <router-link class="legalLink" to="/privacidad">
+            {{ t("footer.privacy") }}
+          </router-link>
+          <span class="dot">•</span>
+          <router-link class="legalLink" to="/terminos">
+            {{ t("footer.terms") }}
+          </router-link>
+        </div>
       </div>
     </div>
 
-    <!-- subtle background -->
     <span class="bgGlow g1" aria-hidden="true"></span>
     <span class="bgGlow g2" aria-hidden="true"></span>
     <span class="bgGlow g3" aria-hidden="true"></span>
@@ -107,22 +166,32 @@
 
 <script setup>
 import { computed } from "vue";
+import { useLang } from "@/composables/useLang";
+
+const { t } = useLang();
 
 const year = new Date().getFullYear();
 
-// Cambiá por tus datos reales
-const email = "hola@vyka.studio";
-const waText = "+54 11 0000-0000";
+const email = "vykastudio@hotmail.com";
+const waText = "+54 11 2615-4277";
+
+const instagramUrl = "https://www.instagram.com/vyka.studios";
+const facebookUrl = "https://www.facebook.com/";
 
 const waLink = computed(() => {
-  const phone = "541100000000"; // sin +, sin espacios
-  const msg = encodeURIComponent("Hola! Quiero cotizar una web con diseño UX/UI.");
+  const phone = "541126154277";
+  const lang = localStorage.getItem("lang") || "es";
+
+  const msg =
+    lang === "en"
+      ? encodeURIComponent("Hi! I’d like to get a quote for a website with UX/UI design.")
+      : encodeURIComponent("¡Hola! Quiero cotizar una web con diseño UX/UI.");
+
   return `https://wa.me/${phone}?text=${msg}`;
 });
 </script>
 
 <style scoped>
-/* VYKA Footer — Dark premium con tu paleta (#181818 + violeta/azul) */
 .vyka-footer{
   --bg: #181818;
   --panel: rgba(240,238,239,0.04);
@@ -243,7 +312,6 @@ const waLink = computed(() => {
   transform: translateX(2px);
 }
 
-/* underline gradient sutil */
 .link::after{
   content:"";
   position:absolute;
@@ -324,19 +392,19 @@ const waLink = computed(() => {
   color: rgba(180,180,180,0.70);
 }
 
-/* SOCIAL — centrado y con ancho alineado a cards */
+/* SOCIAL */
 .socialWrap{
   width: 100%;
   display: flex;
-  justify-content: center; /* ✅ centrado */
+  justify-content: center;
   margin-top: 6px;
 }
 
 .social{
   width: 100%;
-  max-width: 520px;        /* ✅ parecido al “ancho visual” de tus cards */
+  max-width: 520px;
   display: flex;
-  justify-content: center; /* ✅ centrado */
+  justify-content: center;
   gap: 10px;
 }
 
@@ -346,12 +414,10 @@ const waLink = computed(() => {
   border-radius: 16px;
   display: grid;
   place-items: center;
-
   border: 1px solid rgba(240,238,239,0.10);
   background: rgba(0,0,0,0.14);
   color: rgba(240,238,239,0.86);
   text-decoration: none;
-
   transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 .socialBtn:hover{
@@ -380,9 +446,27 @@ const waLink = computed(() => {
   color: rgba(180,180,180,0.92);
   font-size: 13px;
 }
-.legalText{
-  margin: 0;
+
+.legalLinks{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.legalLink{
+  text-decoration: none;
   color: rgba(180,180,180,0.92);
+  font-size: 13px;
+  transition: color .18s ease;
+}
+
+.legalLink:hover{
+  color: rgba(240,238,239,0.96);
+}
+
+.dot{
+  color: rgba(180,180,180,0.62);
   font-size: 13px;
 }
 
@@ -411,7 +495,6 @@ const waLink = computed(() => {
   bottom: -140px; left: 20%;
 }
 
-/* grid overlay */
 .grid{
   position: absolute;
   inset: 0;
@@ -427,10 +510,18 @@ const waLink = computed(() => {
 
 /* RESPONSIVE */
 @media (max-width: 980px){
-  .top{ grid-template-columns: 1fr 1fr; }
+  .top{
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
 @media (max-width: 560px){
-  .top{ grid-template-columns: 1fr; }
-  .divider{ margin: 22px 0 14px; }
+  .top{
+    grid-template-columns: 1fr;
+  }
+
+  .divider{
+    margin: 22px 0 14px;
+  }
 }
 </style>

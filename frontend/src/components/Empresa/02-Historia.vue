@@ -3,62 +3,84 @@
   <section
     class="empresa-historia"
     id="historia"
-    aria-label="Quiénes somos y por qué nació VYKA"
+    :aria-label="t('empresa.historia.aria')"
     ref="rootRef"
   >
     <div class="wrap">
       <div class="grid">
         <!-- LEFT -->
         <header class="left">
-          <p class="kicker" data-reveal style="--d: 0ms">QUIÉNES SOMOS</p>
+          <p class="kicker" data-reveal style="--d: 0ms">
+            {{ t("empresa.historia.kicker") }}
+          </p>
 
           <h2 class="title" data-reveal style="--d: 80ms">
-            <span>Proceso claro.</span>
-            <span class="grad">Impacto real.</span>
+            <span>{{ t("empresa.historia.titleLine1") }}</span>
+            <span class="grad">{{ t("empresa.historia.titleLine2") }}</span>
           </h2>
 
           <p class="lead" data-reveal style="--d: 160ms">
-            Diseñamos y desarrollamos productos digitales con una metodología definida.
-            Cada proyecto parte de una estructura, un objetivo y un proceso de validación.
+            {{ t("empresa.historia.lead") }}
           </p>
 
-          <div class="chips" role="list" aria-label="Pilares de VYKA" data-reveal style="--d: 240ms">
-            <span class="chip" role="listitem">Planificación</span>
-            <span class="chip" role="listitem">Diseño premium</span>
-            <span class="chip" role="listitem">Desarrollo profesional</span>
-            <span class="chip" role="listitem">Resultados</span>
+          <div
+            class="chips"
+            role="list"
+            :aria-label="t('empresa.historia.pillarsAria')"
+            data-reveal
+            style="--d: 240ms"
+          >
+            <span class="chip" role="listitem">
+              {{ t("empresa.historia.chips.0") }}
+            </span>
+            <span class="chip" role="listitem">
+              {{ t("empresa.historia.chips.1") }}
+            </span>
+            <span class="chip" role="listitem">
+              {{ t("empresa.historia.chips.2") }}
+            </span>
+            <span class="chip" role="listitem">
+              {{ t("empresa.historia.chips.3") }}
+            </span>
           </div>
         </header>
 
         <!-- RIGHT -->
         <article class="right" data-reveal style="--d: 220ms">
-          <div class="card" aria-label="Por qué nació VYKA">
+          <div class="card" :aria-label="t('empresa.historia.cardAria')">
             <span class="card-grid" aria-hidden="true"></span>
             <span class="card-glow" aria-hidden="true"></span>
 
-            <p class="card-kicker">POR QUÉ VYKA</p>
+            <p class="card-kicker">
+              {{ t("empresa.historia.cardKicker") }}
+            </p>
 
             <h3 class="card-title">
-              No todo proyecto necesita más diseño.
+              {{ t("empresa.historia.cardTitleLine1") }}
               <br />
-              Necesita dirección.
+              {{ t("empresa.historia.cardTitleLine2") }}
             </h3>
 
-            <ul class="bullets" aria-label="Enfoque de trabajo">
-              <li>Base estratégica clara.</li>
-              <li>Sistema definido.</li>
-              <li>Objetivo concreto.</li>
+            <ul
+              class="bullets"
+              :aria-label="t('empresa.historia.bulletsAria')"
+            >
+              <li>{{ t("empresa.historia.bullets.0") }}</li>
+              <li>{{ t("empresa.historia.bullets.1") }}</li>
+              <li>{{ t("empresa.historia.bullets.2") }}</li>
             </ul>
 
             <p class="card-text">
-              En VYKA empezamos por la estructura.
-              <span class="strong">Después desarrollamos.</span>
+              {{ t("empresa.historia.cardTextBefore") }}
+              <span class="strong">
+                {{ t("empresa.historia.cardTextStrong") }}
+              </span>
             </p>
 
-            <div class="card-tags" aria-label="Enfoques">
-              <span class="tag">Estrategia</span>
-              <span class="tag">Experiencia</span>
-              <span class="tag">Desarrollo</span>
+            <div class="card-tags" :aria-label="t('empresa.historia.tagsAria')">
+              <span class="tag">{{ t("empresa.historia.tags.0") }}</span>
+              <span class="tag">{{ t("empresa.historia.tags.1") }}</span>
+              <span class="tag">{{ t("empresa.historia.tags.2") }}</span>
             </div>
           </div>
         </article>
@@ -69,6 +91,9 @@
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from "vue";
+import { useLang } from "@/composables/useLang";
+
+const { t } = useLang();
 
 const rootRef = ref(null);
 let io;
@@ -314,10 +339,8 @@ onBeforeUnmount(() => {
 }
 
 /* =========================
-   REVEAL ANIMATIONS (WOW SUTIL)
+   REVEAL ANIMATIONS
 ========================= */
-
-/* Estado base (oculto) */
 [data-reveal] {
   opacity: 0;
   transform: translateY(14px);
@@ -330,14 +353,12 @@ onBeforeUnmount(() => {
   will-change: transform, opacity, filter;
 }
 
-/* Entra */
 [data-reveal].is-in {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
 }
 
-/* Card: entra con un toque de “depth” */
 .right[data-reveal] {
   transform: translateY(16px) scale(.985);
 }
@@ -345,7 +366,6 @@ onBeforeUnmount(() => {
   transform: translateY(0) scale(1);
 }
 
-/* Stagger elegante: chips */
 .chips.is-in .chip {
   opacity: 0;
   transform: translateY(10px);
@@ -364,7 +384,6 @@ onBeforeUnmount(() => {
   transform: translateY(0);
 }
 
-/* Stagger elegante: bullets */
 .right.is-in .bullets li {
   opacity: 0;
   transform: translateY(10px);
@@ -381,7 +400,6 @@ onBeforeUnmount(() => {
   transform: translateY(0);
 }
 
-/* Glow sutil “respira” cuando ya entró */
 .right.is-in .card-glow {
   animation: glowBreath 5.6s ease-in-out infinite;
   opacity: 1;
@@ -392,7 +410,6 @@ onBeforeUnmount(() => {
   50% { filter: blur(1.5px); opacity: 1; }
 }
 
-/* Hover premium */
 @media (hover: hover) {
   .right.is-in .card {
     transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
@@ -406,7 +423,6 @@ onBeforeUnmount(() => {
   }
 }
 
-/* Accesibilidad */
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1 !important;
@@ -419,9 +435,6 @@ onBeforeUnmount(() => {
   }
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;

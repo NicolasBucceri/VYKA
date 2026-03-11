@@ -71,34 +71,35 @@ import { useLang } from "@/composables/useLang";
 
 const { t, lang } = useLang();
 
-/**
- * Pasos traducibles
- */
+/* =========================
+   PASOS
+========================= */
 const pasos = computed(() => {
   const steps = t("metodo.steps");
   if (!Array.isArray(steps)) return [];
-  return steps.map((s, idx) => ({ id: idx + 1, ...s }));
+  return steps.map((step, idx) => ({
+    id: idx + 1,
+    ...step
+  }));
 });
 
 const activeIndex = ref(0);
 
-const active = computed(() =>
-  pasos.value[activeIndex.value] || {
-    id: 0,
-    label: "",
-    title: "",
-    text: "",
-    mediaFoot: ""
-  }
-);
+const active = computed(() => {
+  return (
+    pasos.value[activeIndex.value] || {
+      id: 0,
+      label: "",
+      title: "",
+      text: "",
+      mediaFoot: ""
+    }
+  );
+});
 
-/**
- * Videos
- * Asegurate de tener:
- * src/assets/Metodos/Paso1.mp4
- * src/assets/Metodos/Paso2.mp4
- * ...
- */
+/* =========================
+   VIDEOS
+========================= */
 const videos = import.meta.glob("@/assets/Metodos/*.webm", {
   eager: true,
   import: "default"
@@ -109,6 +110,9 @@ const activeVideo = computed(() => {
   return videos[`/src/assets/Metodos/paso${stepNumber}.webm`] || "";
 });
 
+/* =========================
+   REFS UI
+========================= */
 const tabRefs = ref([]);
 const tabsWrapRef = ref(null);
 
@@ -123,43 +127,79 @@ const capStyle = computed(() => ({
   transform: `translateX(${capX.value}px)`
 }));
 
+/* =========================
+   PROGRESS
+========================= */
 function updateProgress() {
   const wrap = tabsWrapRef.value;
   const el = tabRefs.value?.[activeIndex.value];
-  if (!wrap || !el) return;
 
-  const wrapRect = wrap.getBoundingClientRect();
-  const rect = el.getBoundingClientRect();
+  if (!wrap || !el || !pasos.value.length) return;
 
   const lineLeft = 14;
   const capSize = 12;
   const capHalf = capSize / 2;
-
   const lineW = wrap.clientWidth - lineLeft * 2;
+
+  const isLastStep = activeIndex.value === pasos.value.length - 1;
+  const isMobile = window.innerWidth <= 768;
+
+  // MOBILE: progreso por índice lógico
+  if (isMobile) {
+    if (isLastStep) {
+      progressWidth.value = lineW;
+      capX.value = lineW - capHalf;
+      return;
+    }
+
+    const totalSteps = pasos.value.length;
+    const progressRatio =
+      totalSteps > 1 ? activeIndex.value / (totalSteps - 1) : 0;
+
+    const xFromLine = lineW * progressRatio;
+
+    progressWidth.value = xFromLine;
+    capX.value = xFromLine - capHalf;
+    return;
+  }
+
+  // DESKTOP: último paso completa toda la línea
+  if (isLastStep) {
+    progressWidth.value = lineW;
+    capX.value = lineW - capHalf;
+    return;
+  }
+
+  // DESKTOP: posición real del botón
+  const wrapRect = wrap.getBoundingClientRect();
+  const rect = el.getBoundingClientRect();
 
   const xCenter =
     rect.left - wrapRect.left + wrap.scrollLeft + rect.width / 2;
 
   let xFromLine = xCenter - lineLeft;
-
-  if (activeIndex.value === pasos.value.length - 1) {
-    xFromLine = lineW;
-  }
-
   xFromLine = Math.max(0, Math.min(lineW, xFromLine));
 
   progressWidth.value = xFromLine;
   capX.value = xFromLine - capHalf;
 }
 
+/* =========================
+   ACTIONS
+========================= */
 async function setActive(i) {
   activeIndex.value = i;
   await nextTick();
   updateProgress();
 }
 
-const onResize = () => updateProgress();
+const onResize = () => {
+  updateProgress();
+};
 
+/* =========================
+   LIFECYCLE
+========================= */
 onMounted(async () => {
   await nextTick();
   updateProgress();
@@ -167,7 +207,10 @@ onMounted(async () => {
 });
 
 watch(lang, async () => {
-  if (activeIndex.value > pasos.value.length - 1) activeIndex.value = 0;
+  if (activeIndex.value > pasos.value.length - 1) {
+    activeIndex.value = 0;
+  }
+
   await nextTick();
   updateProgress();
 });
@@ -446,12 +489,15 @@ onBeforeUnmount(() => {
   }
 
   .tabs {
-    gap: 18px;
+    gap: 14px 0;
+    justify-content: space-between;
   }
 
   .tab {
+    width: 33.333%;
+    text-align: center;
     font-size: 12px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
   }
 
   .panel-title {

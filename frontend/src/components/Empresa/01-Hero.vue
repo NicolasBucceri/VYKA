@@ -8,14 +8,12 @@
       playsinline
       preload="auto"
     >
-      <source src="@/assets/Empresa/Heroempresa.webm" type="video/mp4" />
+      <source src="@/assets/Empresa/Heroempresa.webm" type="video/webm" />
     </video>
 
-    <!-- Oscurecimiento sutil -->
     <div class="overlay"></div>
 
-    <!-- Scroll indicator minimal -->
-    <div class="scroll-indicator">
+    <div class="scroll-indicator" aria-hidden="true">
       <span></span>
     </div>
   </section>
@@ -24,55 +22,77 @@
 <style scoped>
 .empresa-hero {
   position: relative;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   background: #181818;
 }
 
-/* Video full */
 .hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* cambiá a contain si querés mostrarlo entero */
+  object-position: center;
 }
 
-/* Overlay mínimo */
 .overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(24, 24, 24, 0.2),
-    rgba(24, 24, 24, 0.6)
+    rgba(24, 24, 24, 0.18) 0%,
+    rgba(24, 24, 24, 0.32) 45%,
+    rgba(24, 24, 24, 0.62) 100%
   );
 }
 
-/* Scroll indicator elegante */
 .scroll-indicator {
   position: absolute;
-  bottom: 40px;
   left: 50%;
+  bottom: 40px;
   transform: translateX(-50%);
+  z-index: 2;
 }
 
 .scroll-indicator span {
   display: block;
   width: 2px;
   height: 40px;
-  background: linear-gradient(
-    to bottom,
-    #6D5DF6,
-    transparent
-  );
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #6d5df6, transparent);
   animation: scrollMove 2s infinite;
 }
 
 @keyframes scrollMove {
-  0% { opacity: 0; transform: translateY(-10px); }
-  50% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(10px); }
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .empresa-hero {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  .hero-video {
+    object-position: center 35%;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
 }
 </style>

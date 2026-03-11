@@ -6,43 +6,40 @@
       <div class="bg-grid" aria-hidden="true"></div>
 
       <div class="wrap">
-        <!-- HEAD -->
         <header class="head" :class="{ in: inView }">
-          <p class="eyebrow">CONTACTO</p>
+          <p class="eyebrow">{{ t("contact.eyebrow") }}</p>
 
           <h2 class="headline">
-            <span class="headline-white">HABLEMOS DE TU</span>
-            <span class="headline-grad">PRÓXIMO PROYECTO</span>
+            <span class="headline-white">{{ t("contact.title1") }}</span>
+            <span class="headline-grad">{{ t("contact.title2") }}</span>
           </h2>
 
           <p class="sub">
-            Escribime por WhatsApp y coordinamos una charla clara, rápida y enfocada en lo que necesitás.
+            {{ t("contact.subtitle") }}
           </p>
         </header>
 
         <div class="layout solo">
-          <!-- CARD -->
           <article class="card" :class="{ in: inView }">
             <div class="card-glow" aria-hidden="true"></div>
             <div class="card-noise" aria-hidden="true"></div>
 
-            <p class="kicker">CONTACTO DIRECTO</p>
+            <p class="kicker">{{ t("contact.direct") }}</p>
 
             <h3 class="title">
-              Hablá por <span class="grad">WhatsApp</span>
+              {{ t("contact.whatsappTitle") }}
             </h3>
 
             <p class="desc">
-              Si ya tenés una idea, mandame un mensaje y te respondo con claridad.
-              <span class="muted">Corto, directo y sin vueltas.</span>
+              {{ t("contact.desc") }}
+              <span class="muted">{{ t("contact.descMuted") }}</span>
             </p>
 
-            <!-- ACTIONS -->
             <div class="actions">
               <a
                 class="action primary"
-                :href="waLink"
-                target="_blank"
+                href="#"
+                @click.prevent="abrirWhatsapp"
                 rel="noopener noreferrer"
               >
                 <span class="action-shine" aria-hidden="true"></span>
@@ -52,8 +49,8 @@
                 </span>
 
                 <span class="txt">
-                  <span class="main">{{ WA_NUMBER }}</span>
-                  <span class="meta">Respuesta en 24–48 hs</span>
+                  <span class="main">{{ WA_NUMBER_DISPLAY }}</span>
+                  <span class="meta">{{ t("contact.replyTime") }}</span>
                 </span>
 
                 <span class="arrow">
@@ -67,8 +64,8 @@
                 </span>
 
                 <span class="txt">
-                  <span class="main">Devoto · CABA</span>
-                  <span class="meta">Zona de trabajo</span>
+                  <span class="main">{{ t("contact.location") }}</span>
+                  <span class="meta">{{ t("contact.workArea") }}</span>
                 </span>
               </div>
 
@@ -79,7 +76,7 @@
 
                 <span class="txt">
                   <span class="main">contacto@vyka.dev</span>
-                  <span class="meta">Briefs, docs y referencias</span>
+                  <span class="meta">{{ t("contact.emailMeta") }}</span>
                 </span>
 
                 <span class="arrow">
@@ -88,7 +85,6 @@
               </a>
             </div>
 
-            <!-- MAPA -->
             <div class="mapBox">
               <iframe
                 class="mapFrame"
@@ -99,7 +95,7 @@
               <div class="mapOverlay">
                 <div class="mapTag">
                   <i class="fa-solid fa-location-dot"></i>
-                  <span>Devoto · CABA</span>
+                  <span>{{ t("contact.location") }}</span>
                 </div>
 
                 <a
@@ -108,14 +104,14 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Abrir en Maps
+                  {{ t("contact.openMaps") }}
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
               </div>
             </div>
 
             <button class="cta" @click="abrirWhatsapp">
-              <span>Escribir por WhatsApp</span>
+              <span>{{ t("contact.cta") }}</span>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
@@ -127,24 +123,21 @@
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import { useLang } from "@/composables/useLang";
 import Vyka from "@/components/ui/Background.vue";
+import { openWhatsApp } from "@/utils/whatsapp";
 
-const WA_NUMBER = "+54 9 11 0000 0000";
-const WA_NUMBER_CLEAN = "5491100000000";
+const { t } = useLang();
 
-const waLink = computed(() => {
-  const text = encodeURIComponent("Hola! Quiero consultar por un proyecto web.");
-  return `https://wa.me/${WA_NUMBER_CLEAN}?text=${text}`;
-});
+const WA_NUMBER_DISPLAY = "+54 9 11 2615-4277";
 
-const abrirWhatsapp = () => window.open(waLink.value, "_blank");
+const abrirWhatsapp = () => openWhatsApp("proyecto");
 
 const mailLink = computed(() => {
-  const subject = encodeURIComponent("Consulta - Proyecto VYKA");
-  return `mailto:contacto@vyka.dev?subject=${subject}`;
+  const subject = encodeURIComponent(t("contact.mailSubject"));
+  return `mailto:vykastudio@hotmail.com?subject=${subject}`;
 });
 
-/* Scroll reveal */
 const sectionRef = ref(null);
 const inView = ref(false);
 let observer = null;
@@ -152,9 +145,7 @@ let observer = null;
 onMounted(() => {
   observer = new IntersectionObserver(
     ([entry]) => {
-      if (entry.isIntersecting) {
-        inView.value = true;
-      }
+      if (entry.isIntersecting) inView.value = true;
     },
     { threshold: 0.2 }
   );
@@ -221,15 +212,15 @@ onBeforeUnmount(() => {
   pointer-events: none;
   opacity: 0.06;
   background-image:
-    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 34px 34px;
   mask-image: linear-gradient(
     180deg,
-    rgba(0,0,0,0.25),
-    rgba(0,0,0,0.9) 25%,
-    rgba(0,0,0,0.95) 75%,
-    rgba(0,0,0,0.15)
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.9) 25%,
+    rgba(0, 0, 0, 0.95) 75%,
+    rgba(0, 0, 0, 0.15)
   );
 }
 
@@ -256,7 +247,7 @@ onBeforeUnmount(() => {
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255, 255, 255, 0.42);
 }
 
 .headline {
@@ -274,8 +265,8 @@ onBeforeUnmount(() => {
 }
 
 .headline-white {
-  color: rgba(240,240,239,0.96);
-  text-shadow: 0 10px 34px rgba(0,0,0,0.2);
+  color: rgba(240, 240, 239, 0.96);
+  text-shadow: 0 10px 34px rgba(0, 0, 0, 0.2);
 }
 
 .headline-grad {
@@ -297,7 +288,7 @@ onBeforeUnmount(() => {
 .sub {
   margin: 18px auto 0;
   max-width: 760px;
-  color: rgba(255,255,255,0.64);
+  color: rgba(255, 255, 255, 0.64);
   font-size: 1rem;
   line-height: 1.75;
 }
@@ -317,17 +308,17 @@ onBeforeUnmount(() => {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
-    linear-gradient(135deg, rgba(109,93,246,0.05), rgba(45,140,255,0.03) 45%, rgba(12,12,17,0.92));
-  border: 1px solid rgba(255,255,255,0.08);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+    linear-gradient(135deg, rgba(109, 93, 246, 0.05), rgba(45, 140, 255, 0.03) 45%, rgba(12, 12, 17, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 26px;
   padding: 40px;
   backdrop-filter: blur(18px);
   box-shadow:
-    0 28px 80px rgba(0,0,0,0.55),
-    0 0 0 1px rgba(255,255,255,0.02) inset,
-    0 0 40px rgba(109,93,246,0.06),
-    0 0 60px rgba(45,140,255,0.04);
+    0 28px 80px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+    0 0 40px rgba(109, 93, 246, 0.06),
+    0 0 60px rgba(45, 140, 255, 0.04);
 
   opacity: 0;
   transform: translateY(20px);
@@ -344,12 +335,12 @@ onBeforeUnmount(() => {
 }
 
 .card:hover {
-  border-color: rgba(109,93,246,0.18);
+  border-color: rgba(109, 93, 246, 0.18);
   box-shadow:
-    0 32px 88px rgba(0,0,0,0.58),
-    0 0 0 1px rgba(255,255,255,0.02) inset,
-    0 0 48px rgba(109,93,246,0.08),
-    0 0 72px rgba(45,140,255,0.05);
+    0 32px 88px rgba(0, 0, 0, 0.58),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+    0 0 48px rgba(109, 93, 246, 0.08),
+    0 0 72px rgba(45, 140, 255, 0.05);
 }
 
 .card-glow {
@@ -357,8 +348,8 @@ onBeforeUnmount(() => {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(90% 80% at 0% 0%, rgba(109,93,246,0.12), transparent 42%),
-    radial-gradient(70% 70% at 100% 100%, rgba(45,140,255,0.09), transparent 46%);
+    radial-gradient(90% 80% at 0% 0%, rgba(109, 93, 246, 0.12), transparent 42%),
+    radial-gradient(70% 70% at 100% 100%, rgba(45, 140, 255, 0.09), transparent 46%);
   opacity: 0.95;
 }
 
@@ -367,7 +358,7 @@ onBeforeUnmount(() => {
   inset: 0;
   pointer-events: none;
   opacity: 0.04;
-  background-image: radial-gradient(rgba(255,255,255,0.9) 0.6px, transparent 0.6px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 0.6px, transparent 0.6px);
   background-size: 10px 10px;
   mix-blend-mode: soft-light;
 }
@@ -409,7 +400,7 @@ onBeforeUnmount(() => {
 }
 
 .muted {
-  color: rgba(255,255,255,0.62);
+  color: rgba(255, 255, 255, 0.62);
 }
 
 /* =========================
@@ -430,9 +421,9 @@ onBeforeUnmount(() => {
   padding: 15px 16px;
   border-radius: 18px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
-    rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.08);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: #f0f0ef;
   text-decoration: none;
   transition:
@@ -444,20 +435,20 @@ onBeforeUnmount(() => {
 
 .action:hover {
   transform: translateY(-2px);
-  border-color: rgba(109,93,246,0.28);
+  border-color: rgba(109, 93, 246, 0.28);
   background:
-    linear-gradient(180deg, rgba(109,93,246,0.07), rgba(45,140,255,0.04)),
-    rgba(255,255,255,0.02);
+    linear-gradient(180deg, rgba(109, 93, 246, 0.07), rgba(45, 140, 255, 0.04)),
+    rgba(255, 255, 255, 0.02);
   box-shadow:
-    0 14px 34px rgba(0,0,0,0.22),
-    0 0 24px rgba(109,93,246,0.08);
+    0 14px 34px rgba(0, 0, 0, 0.22),
+    0 0 24px rgba(109, 93, 246, 0.08);
 }
 
 .action.primary {
-  border-color: rgba(109,93,246,0.22);
+  border-color: rgba(109, 93, 246, 0.22);
   background:
-    linear-gradient(180deg, rgba(109,93,246,0.10), rgba(45,140,255,0.05)),
-    rgba(255,255,255,0.03);
+    linear-gradient(180deg, rgba(109, 93, 246, 0.1), rgba(45, 140, 255, 0.05)),
+    rgba(255, 255, 255, 0.03);
 }
 
 .action-shine {
@@ -467,7 +458,7 @@ onBeforeUnmount(() => {
   background: linear-gradient(
     110deg,
     transparent 0%,
-    rgba(255,255,255,0.07) 38%,
+    rgba(255, 255, 255, 0.07) 38%,
     transparent 60%
   );
   transform: translateX(-120%);
@@ -486,10 +477,10 @@ onBeforeUnmount(() => {
   place-items: center;
   border-radius: 14px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
-    rgba(0,0,0,0.34);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .ico i {
@@ -519,7 +510,7 @@ onBeforeUnmount(() => {
 }
 
 .arrow {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   transition: transform 0.24s ease, color 0.24s ease;
 }
 
@@ -537,11 +528,11 @@ onBeforeUnmount(() => {
   overflow: hidden;
   height: 260px;
   position: relative;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(8,8,14,0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 8, 14, 0.7);
   box-shadow:
-    0 18px 46px rgba(0,0,0,0.28),
-    0 0 0 1px rgba(255,255,255,0.02) inset;
+    0 18px 46px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
 }
 
 .mapFrame {
@@ -556,9 +547,9 @@ onBeforeUnmount(() => {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, rgba(8,8,14,0.86), rgba(8,8,14,0.2)),
-    radial-gradient(circle at 20% 20%, rgba(109,93,246,0.18), transparent 55%),
-    radial-gradient(circle at 85% 70%, rgba(45,140,255,0.14), transparent 45%);
+    linear-gradient(to top, rgba(8, 8, 14, 0.86), rgba(8, 8, 14, 0.2)),
+    radial-gradient(circle at 20% 20%, rgba(109, 93, 246, 0.18), transparent 55%),
+    radial-gradient(circle at 85% 70%, rgba(45, 140, 255, 0.14), transparent 45%);
   pointer-events: none;
 }
 
@@ -577,9 +568,9 @@ onBeforeUnmount(() => {
   padding: 10px 14px;
   border-radius: 999px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
-    rgba(12,12,17,0.84);
-  border: 1px solid rgba(255,255,255,0.10);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+    rgba(12, 12, 17, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #f0f0ef;
   font-size: 13px;
   text-decoration: none;
@@ -598,10 +589,10 @@ onBeforeUnmount(() => {
 
 .mapBtn:hover {
   transform: translateY(-2px);
-  border-color: rgba(109,93,246,0.26);
+  border-color: rgba(109, 93, 246, 0.26);
   background:
-    linear-gradient(180deg, rgba(109,93,246,0.14), rgba(45,140,255,0.06)),
-    rgba(12,12,17,0.88);
+    linear-gradient(180deg, rgba(109, 93, 246, 0.14), rgba(45, 140, 255, 0.06)),
+    rgba(12, 12, 17, 0.88);
 }
 
 /* =========================
@@ -613,7 +604,7 @@ onBeforeUnmount(() => {
   min-height: 56px;
   padding: 14px 18px;
   border-radius: 18px;
-  border: 1px solid rgba(109,93,246,0.18);
+  border: 1px solid rgba(109, 93, 246, 0.18);
   font-weight: 700;
   font-size: 0.98rem;
   background: linear-gradient(90deg, #6d5df6 0%, #2d8cff 100%);
@@ -632,8 +623,8 @@ onBeforeUnmount(() => {
 .cta:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 20px 60px rgba(109,93,246,0.34),
-    0 0 28px rgba(45,140,255,0.18);
+    0 20px 60px rgba(109, 93, 246, 0.34),
+    0 0 28px rgba(45, 140, 255, 0.18);
   filter: brightness(1.04);
 }
 

@@ -1,30 +1,51 @@
 <!-- src/views/Proyectos.vue -->
 <template>
   <Vyka>
-    <section class="proyectos" id="proyectos" aria-label="Proyectos de VYKA">
+    <section
+      class="proyectos"
+      id="proyectos"
+      :aria-label="t('projectsPage.aria')"
+    >
       <div class="wrap">
-        <!-- Head (centrado, minimal) -->
+        <!-- Head -->
         <header class="head headCenter">
-          <p class="kicker">PROYECTOS FINALIZADOS</p>
+          <p class="kicker">{{ t("projectsPage.kicker") }}</p>
 
           <h2 class="title">
-            Nuestros <span class="grad">proyectos</span>
+            {{ t("projectsPage.titleWhite") }}
+            <span class="grad">{{ t("projectsPage.titleGrad") }}</span>
           </h2>
 
-          <p class="subTriad" aria-label="Enfoque de trabajo">
-            Estrategia <span class="dot">·</span>
-            Diseño <span class="dot">·</span>
-            Desarrollo <span class="dot">·</span>
-            Resultados
+          <p class="subTriad" :aria-label="t('projectsPage.triadAria')">
+            {{ t("projectsPage.triad1") }}
+            <span class="dot">·</span>
+            {{ t("projectsPage.triad2") }}
+            <span class="dot">·</span>
+            {{ t("projectsPage.triad3") }}
+            <span class="dot">·</span>
+            {{ t("projectsPage.triad4") }}
           </p>
         </header>
 
         <!-- Grid -->
         <div class="projectsGrid" role="list">
-          <button v-for="p in proyectos" :key="p.slug" class="projectCard" type="button" role="listitem"
-            :aria-label="`Abrir proyecto ${p.nombre}`" @click="abrirProyecto(p)">
-            <img class="projectMedia" :src="p.imagen" :alt="`Preview de ${p.nombre}`"
-              :style="{ objectPosition: p.focus || '50% 25%' }" loading="lazy" decoding="async" />
+          <button
+            v-for="p in proyectos"
+            :key="p.slug"
+            class="projectCard"
+            type="button"
+            role="listitem"
+            :aria-label="`${t('projectsPage.openProject')} ${p.nombre}`"
+            @click="abrirProyecto(p)"
+          >
+            <img
+              class="projectMedia"
+              :src="p.imagen"
+              :alt="`${t('projectsPage.previewOf')} ${p.nombre}`"
+              :style="{ objectPosition: p.focus || '50% 25%' }"
+              loading="lazy"
+              decoding="async"
+            />
 
             <div class="projectOverlay" aria-hidden="true"></div>
 
@@ -33,7 +54,7 @@
               <p class="projectHoverTag">{{ p.tag }}</p>
 
               <span class="projectHoverBtn" aria-hidden="true">
-                Ver proyecto
+                {{ t("projectsPage.viewProject") }}
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </span>
             </div>
@@ -48,14 +69,16 @@
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import Vyka from "@/components/ui/Background.vue";
+import { useLang } from "@/composables/useLang";
 
 // ✅ Single Source of Truth
 import { getProyectos } from "@/content/projects.master";
 
 const router = useRouter();
+const { t, lang } = useLang();
 
-// ✅ la grilla consume el master (y listo)
-const proyectos = computed(() => getProyectos());
+// ✅ ahora depende del idioma actual
+const proyectos = computed(() => getProyectos(lang.value));
 
 const abrirProyecto = (p) => {
   router.push({ name: "ProyectoDetalle", params: { slug: p.slug } });
@@ -63,7 +86,6 @@ const abrirProyecto = (p) => {
 </script>
 
 <style scoped>
-/* tu CSS EXACTO tal cual lo tenías (no lo toco) */
 .proyectos {
   padding: clamp(82px, 8vw, 120px) 0;
 }
@@ -385,7 +407,6 @@ const abrirProyecto = (p) => {
     opacity: 0;
     transform: translateY(10px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -397,7 +418,6 @@ const abrirProyecto = (p) => {
     opacity: 0;
     transform: translateY(18px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -405,7 +425,6 @@ const abrirProyecto = (p) => {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .kicker,
   .title,
   .subTriad,

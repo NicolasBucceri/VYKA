@@ -281,24 +281,71 @@ const { t } = useLang();
    RESPONSIVE
 ========================= */
 
-@media (max-width:980px) {
-
+@media (max-width: 980px) {
   .content {
     grid-template-columns: 1fr;
+    padding: 36px 22px;
+    gap: 30px;
   }
 
   .content::before {
     display: none;
   }
 
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .title {
+    gap: 8px;
+  }
+
+  .t1,
+  .t2,
+  .t3 {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
   .title-beam {
-    top: 120px;
+    left: 0;
+    right: 0;
+    top: 100px;
+  }
+
+  .right {
+    gap: 22px;
+    align-items: flex-start;
+  }
+
+  .quote-wrap {
+    padding-left: 0;
+  }
+
+  .quote {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+    margin-bottom: -8px;
+    font-size: 72px;
+    line-height: 0.8;
+  }
+
+  .text {
+    max-width: 100%;
+    gap: 14px;
+  }
+
+  .text p {
+    font-size: 14px;
+    line-height: 1.75;
+    text-align: left;
   }
 
   .card-btn {
     width: 100%;
   }
-
 }
 </style>
 ```

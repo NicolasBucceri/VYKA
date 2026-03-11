@@ -1,29 +1,49 @@
 <!-- src/components/Empresa/03-Equipo.vue -->
 <template>
-  <section class="empresa-equipo" id="equipo" aria-label="Nuestro equipo" ref="rootRef">
+  <section
+    class="empresa-equipo"
+    id="equipo"
+    :aria-label="t('empresa.equipo.aria')"
+    ref="rootRef"
+  >
     <div class="wrap">
       <header class="head">
-        <p class="kicker" data-reveal style="--d: 0ms">NUESTRO EQUIPO</p>
+        <p class="kicker" data-reveal style="--d: 0ms">
+          {{ t("empresa.equipo.kicker") }}
+        </p>
 
         <h2 class="title" data-reveal style="--d: 80ms">
-          Las personas <span class="grad">detrás de cada proyecto.</span>
+          {{ t("empresa.equipo.titleWhite") }}
+          <span class="grad">{{ t("empresa.equipo.titleGrad") }}</span>
         </h2>
 
         <p class="subtitle" data-reveal style="--d: 160ms">
-          Un equipo con roles definidos y un método claro de trabajo.
-          Conocé quién está detrás de cada proyecto.
+          {{ t("empresa.equipo.subtitle") }}
         </p>
       </header>
 
-      <div class="grid" role="list" aria-label="Miembros del equipo">
-        <a v-for="(m, i) in team" :key="m.name" class="card" role="listitem" :href="m.linkedin" target="_blank"
-          rel="noopener noreferrer" :aria-label="`Abrir LinkedIn de ${m.name}`" data-reveal
-          :style="`--d:${220 + i * 90}ms`">
+      <div
+        class="grid"
+        role="list"
+        :aria-label="t('empresa.equipo.membersAria')"
+      >
+        <a
+          v-for="(m, i) in team"
+          :key="m.name"
+          class="card"
+          role="listitem"
+          :href="m.linkedin"
+          target="_blank"
+          rel="noopener noreferrer"
+          :aria-label="`${t('empresa.equipo.openLinkedin')} ${m.name}`"
+          data-reveal
+          :style="`--d:${220 + i * 90}ms`"
+        >
           <span class="card-grid" aria-hidden="true"></span>
           <span class="card-glow" aria-hidden="true"></span>
 
           <div class="top">
-            <img class="avatar" :src="m.avatar" :alt="`Foto de ${m.name}`" />
+            <img class="avatar" :src="m.avatar" :alt="`${t('empresa.equipo.photoOf')} ${m.name}`" />
             <span class="li" aria-hidden="true">
               <i class="fa-brands fa-linkedin-in"></i>
             </span>
@@ -35,7 +55,7 @@
             <p class="desc">{{ m.description }}</p>
           </div>
 
-          <div class="footer" aria-label="Áreas principales">
+          <div class="footer" :aria-label="t('empresa.equipo.mainAreasAria')">
             <span class="pill">{{ m.focus1 }}</span>
             <span class="pill">{{ m.focus2 }}</span>
           </div>
@@ -46,42 +66,41 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from "vue";
+import { computed, onMounted, onBeforeUnmount, ref } from "vue";
+import { useLang } from "@/composables/useLang";
 
-const team = [
+const { t } = useLang();
+
+const team = computed(() => [
   {
     name: "Nico",
-    role: "Full-Stack & Diseñador UX/UI",
-    description:
-      "Lidera la arquitectura técnica y el desarrollo, y acompaña la estrategia y el vínculo comercial con el cliente.",
-    focus1: "Arquitectura técnica",
-    focus2: "Estrategia y gestión",
+    role: t("empresa.equipo.team.nico.role"),
+    description: t("empresa.equipo.team.nico.description"),
+    focus1: t("empresa.equipo.team.nico.focus1"),
+    focus2: t("empresa.equipo.team.nico.focus2"),
     avatar: new URL("@/assets/Empresa/Nico.webp", import.meta.url).href,
     linkedin: "https://www.linkedin.com/in/nicolasbucceri/",
   },
   {
     name: "Caro",
-    role: "Diseñadora UX/UI",
-    description:
-      "Define la experiencia y el lenguaje visual, y participa en la estrategia y el contacto con el cliente.",
-    focus1: "UX y usabilidad",
-    focus2: "UI y diseño visual",
+    role: t("empresa.equipo.team.caro.role"),
+    description: t("empresa.equipo.team.caro.description"),
+    focus1: t("empresa.equipo.team.caro.focus1"),
+    focus2: t("empresa.equipo.team.caro.focus2"),
     avatar: new URL("@/assets/Empresa/Caro.webp", import.meta.url).href,
     linkedin: "https://www.linkedin.com/in/carolina-yael-sosa-1ba4a91b5/",
   },
   {
     name: "Alan",
-    role: "Desarrollador Front-End",
-    description:
-      "Implementa interfaces con detalle, aporta soporte técnico y acompaña el proceso comercial cuando hace falta.",
-    focus1: "Front-End",
-    focus2: "Microinteracciones",
+    role: t("empresa.equipo.team.alan.role"),
+    description: t("empresa.equipo.team.alan.description"),
+    focus1: t("empresa.equipo.team.alan.focus1"),
+    focus2: t("empresa.equipo.team.alan.focus2"),
     avatar: new URL("@/assets/Empresa/Alan.webp", import.meta.url).href,
     linkedin: "https://www.linkedin.com/in/tu-linkedin-alan",
   },
-];
+]);
 
-/* Reveal on scroll (IntersectionObserver) */
 const rootRef = ref(null);
 let io;
 
@@ -363,7 +382,6 @@ onBeforeUnmount(() => {
 }
 
 @keyframes glowBreath {
-
   0%,
   100% {
     filter: blur(0px);

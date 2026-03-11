@@ -892,6 +892,146 @@
     "text": "We define the real scope, adjust priorities, and prepare a clear proposal based on your goals.",
     "button": "Request this plan"
   }
+}, "projectsSection": {
+    "ariaLabel": "VYKA projects",
+    "kicker": "COMPLETED PROJECTS",
+    "title": "Our",
+    "titleAccent": "projects",
+    "workApproachAria": "Work approach",
+    "triad": {
+      "strategy": "Strategy",
+      "design": "Design",
+      "development": "Development",
+      "results": "Results"
+    },
+    "openProjectAria": "Open project {name}",
+    "previewAlt": "{name} preview",
+    "viewProject": "View project"
+  },   "projectsPage": {
+    "viewProject": "View project"
+  },
+  "projectDetail": {
+    "heroAria": "Project hero",
+    "heroKicker": "PROJECT",
+    "viewProject": "View project",
+    "loadingKicker": "LOADING",
+    "loadingTitle": "Project",
+    "notFoundKicker": "NOT FOUND",
+    "notFoundTitle": "Project not found",
+    "notFoundText": "We couldn’t find the information for this project.",
+    "resultsAria": "Project results",
+    "resultsKicker": "RESULTS",
+    "resultsTitleWhite": "Real impact.",
+    "resultsTitleGrad": "Measurable results.",
+    "resultsSub": "Each project aims for something simple: improve presence, generate more inquiries, and build a solid digital foundation.",
+    "resultsEmpty": "Results are still being measured.",
+    "resultsDesc": "The goal is not just to have a visually attractive website. The goal is to build a clear, professional digital presence ready to generate real opportunities."
+  }, "empresa": {
+    "historia": {
+      "aria": "Who we are and why VYKA was created",
+      "kicker": "WHO WE ARE",
+      "titleLine1": "Clear process.",
+      "titleLine2": "Real impact.",
+      "lead": "We design and develop digital products with a defined methodology. Every project starts with a structure, a goal, and a validation process.",
+      "pillarsAria": "VYKA pillars",
+      "chips": [
+        "Planning",
+        "Premium design",
+        "Professional development",
+        "Results"
+      ],
+      "cardAria": "Why VYKA was created",
+      "cardKicker": "WHY VYKA",
+      "cardTitleLine1": "Not every project needs more design.",
+      "cardTitleLine2": "It needs direction.",
+      "bulletsAria": "Work approach",
+      "bullets": [
+        "Clear strategic base.",
+        "Defined system.",
+        "Concrete objective."
+      ],
+      "cardTextBefore": "At VYKA, we start with structure.",
+      "cardTextStrong": "Then we build.",
+      "tagsAria": "Approaches",
+      "tags": [
+        "Strategy",
+        "Experience",
+        "Development"
+      ]
+    },
+    "equipo": {
+      "aria": "Our team",
+      "kicker": "OUR TEAM",
+      "titleWhite": "The people",
+      "titleGrad": "behind every project.",
+      "subtitle": "A team with defined roles and a clear working method. Meet the people behind each project.",
+      "membersAria": "Team members",
+      "openLinkedin": "Open LinkedIn of",
+      "photoOf": "Photo of",
+      "mainAreasAria": "Main areas",
+      "team": {
+        "nico": {
+          "role": "Full-Stack & UX/UI Designer",
+          "description": "Leads the technical architecture and development, while also supporting strategy and the commercial relationship with the client.",
+          "focus1": "Technical architecture",
+          "focus2": "Strategy and management"
+        },
+        "caro": {
+          "role": "UX/UI Designer",
+          "description": "Defines the experience and visual language, and also participates in strategy and client communication.",
+          "focus1": "UX and usability",
+          "focus2": "UI and visual design"
+        },
+        "alan": {
+          "role": "Front-End Developer",
+          "description": "Implements interfaces with attention to detail, provides technical support, and supports the commercial process when needed.",
+          "focus1": "Front-End",
+          "focus2": "Microinteractions"
+        }
+      }
+    }
+  },
+"contact": {
+    "eyebrow": "CONTACT",
+    "title1": "LET'S TALK ABOUT YOUR",
+    "title2": "NEXT PROJECT",
+    "subtitle": "Send me a message on WhatsApp and we’ll schedule a quick, clear conversation focused on what you need.",
+    "direct": "DIRECT CONTACT",
+    "whatsappTitle": "Talk via WhatsApp",
+    "desc": "If you already have an idea, send me a message and I’ll reply clearly.",
+    "descMuted": "Short, direct and to the point.",
+    "replyTime": "Reply within 24–48 hours",
+    "location": "Devoto · Buenos Aires, Argentina",
+    "workArea": "Work area",
+    "emailMeta": "Briefs, documents and references",
+    "openMaps": "Open in Maps",
+    "cta": "Message on WhatsApp",
+    "waMessage": "Hi! I’d like to ask about a web project.",
+    "mailSubject": "Inquiry - VYKA Project"
+  }, "footer": {
+  "ariaLabel": "Vyka footer",
+  "goHome": "Go to home",
+  "desc": "We design and develop digital products with a focus on UX/UI, performance, and premium aesthetics.",
+  "differentials": "Differentiators",
+  "performance": "Performance",
+  "sectionsAria": "Sections",
+  "sections": "Sections",
+  "services": "Services",
+  "method": "Method",
+  "projects": "Projects",
+  "contact": "Contact",
+  "resourcesAria": "Resources",
+  "resources": "Resources",
+  "plans": "Plans",
+  "letsTalk": "Let's talk",
+  "email": "Email",
+  "social": "Social media",
+  "instagram": "Instagram",
+  "facebook": "Facebook",
+  "rights": "All rights reserved.",
+  "legal": "Legal",
+  "privacy": "Privacy",
+  "terms": "Terms"
 }
 
 }

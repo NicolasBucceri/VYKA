@@ -2,66 +2,108 @@
   <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
     <div class="container">
       <!-- Logo -->
-      <router-link class="navbar-brand" to="/" :aria-label="t('navbar.homeAria')" @click="closeOffcanvas">
+      <router-link
+        class="navbar-brand"
+        to="/"
+        :aria-label="t('navbar.homeAria')"
+        @click="closeOffcanvas"
+      >
         <img src="@/assets/Logo/Logo.svg" alt="VYKA Logo" class="logo" />
       </router-link>
 
       <!-- Toggle -->
-      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" :aria-label="t('navbar.toggleAria')">
+      <button
+        class="navbar-toggler shadow-none border-0"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        :aria-label="t('navbar.toggleAria')"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- Sidebar -->
-      <div class="offcanvas offcanvas-end sidebar" tabindex="-1" id="offcanvasNavbar"
-        aria-labelledby="offcanvasNavbarLabel">
+      <div
+        class="offcanvas offcanvas-end sidebar"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
         <!-- Header -->
         <div class="offcanvas-header border-bottom">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
             <img src="@/assets/Logo/Logo.svg" alt="VYKA Logo" class="logo-sidebar" />
           </h5>
 
-          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
-            :aria-label="t('navbar.closeAria')"></button>
+          <button
+            type="button"
+            class="btn-close btn-close-white shadow-none"
+            data-bs-dismiss="offcanvas"
+            :aria-label="t('navbar.closeAria')"
+          ></button>
         </div>
 
         <!-- Body -->
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center align-items-lg-center nav-links w-100">
             <li class="nav-item">
-              <router-link class="nav-link" to="/" :class="linkClass('/')" @click="closeOffcanvas">
+              <router-link
+                class="nav-link"
+                to="/"
+                :class="linkClass('/')"
+                @click="closeOffcanvas"
+              >
                 {{ t("navbar.inicio") }}
               </router-link>
             </li>
 
-            <!-- ✅ Servicios -> Home + #planes -->
             <li class="nav-item">
-              <router-link class="nav-link" :to="{ path: '/', hash: '#planes' }" :class="linkClassServicios()"
-                @click="closeOffcanvas">
+              <router-link
+                class="nav-link"
+                :to="{ path: '/', hash: '#planes' }"
+                :class="linkClassServicios()"
+                @click="closeOffcanvas"
+              >
                 {{ t("navbar.servicios") }}
               </router-link>
             </li>
 
             <li class="nav-item">
-              <router-link class="nav-link" to="/proyectos" :class="linkClass('/proyectos')" @click="closeOffcanvas">
+              <router-link
+                class="nav-link"
+                to="/proyectos"
+                :class="linkClass('/proyectos')"
+                @click="closeOffcanvas"
+              >
                 {{ t("navbar.proyectos") }}
               </router-link>
             </li>
 
             <li class="nav-item">
-              <router-link class="nav-link" to="/empresa" :class="linkClass('/empresa')" @click="closeOffcanvas">
+              <router-link
+                class="nav-link"
+                to="/empresa"
+                :class="linkClass('/empresa')"
+                @click="closeOffcanvas"
+              >
                 {{ t("navbar.empresa") }}
               </router-link>
             </li>
 
             <li class="nav-item">
-              <router-link class="nav-link" to="/contacto" :class="linkClass('/contacto')" @click="closeOffcanvas">
+              <router-link
+                class="nav-link"
+                to="/contacto"
+                :class="linkClass('/contacto')"
+                @click="closeOffcanvas"
+              >
                 {{ t("navbar.contacto") }}
               </router-link>
             </li>
           </ul>
 
-          <!-- Idioma (DESKTOP) -->
+          <!-- Idioma desktop -->
           <div class="lang-switch d-none d-lg-flex" role="group" :aria-label="t('navbar.langAria')">
             <i class="fa-solid fa-globe lang-icon" aria-hidden="true"></i>
 
@@ -76,7 +118,7 @@
             </button>
           </div>
 
-          <!-- Idioma (MOBILE) -->
+          <!-- Idioma mobile -->
           <div class="lang-switch d-lg-none mt-3" role="group" :aria-label="t('navbar.langAria')">
             <i class="fa-solid fa-globe lang-icon" aria-hidden="true"></i>
 
@@ -113,7 +155,6 @@ const linkClass = (basePath) => {
   const isExact = p === basePath;
   const isNested = basePath !== "/" && p.startsWith(basePath + "/");
 
-  // 🔹 Caso especial para Inicio
   if (basePath === "/") {
     return { active: isExact && hash !== "#planes" };
   }
@@ -121,14 +162,12 @@ const linkClass = (basePath) => {
   return { active: isExact || isNested };
 };
 
-// ✅ "Servicios" activo cuando estás en Home con #planes
 const linkClassServicios = () => {
   const isHome = currentPath.value === "/";
   const isHashPlanes = route.hash === "#planes";
   return { active: isHome && isHashPlanes };
 };
 
-// ✅ Cierra el offcanvas en mobile al navegar (UX: no queda abierto como telón)
 const closeOffcanvas = () => {
   const el = document.getElementById("offcanvasNavbar");
   if (!el) return;
@@ -139,10 +178,13 @@ const closeOffcanvas = () => {
 </script>
 
 <style scoped>
+
 /* ===== NAVBAR BASE ===== */
+
 .custom-navbar {
   background: rgba(24, 24, 24, 0.78);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   padding: 14px 0;
   transition: all 0.3s ease;
@@ -150,6 +192,7 @@ const closeOffcanvas = () => {
 }
 
 /* ===== LOGO ===== */
+
 .logo {
   height: 22px;
   object-fit: contain;
@@ -171,6 +214,7 @@ const closeOffcanvas = () => {
 }
 
 /* ===== LINKS ===== */
+
 .nav-links {
   gap: 18px;
 }
@@ -186,7 +230,6 @@ const closeOffcanvas = () => {
   text-decoration: none;
 }
 
-/* underline (VYKA) */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -208,7 +251,6 @@ const closeOffcanvas = () => {
   width: calc(100% - 24px);
 }
 
-/* ACTIVE: más grueso + glow sutil */
 .nav-link.active {
   color: rgba(240, 238, 239, 0.98);
   font-weight: 700;
@@ -223,24 +265,13 @@ const closeOffcanvas = () => {
 }
 
 /* ===== TOGGLER ===== */
+
 .navbar-toggler-icon {
   filter: invert(1);
 }
 
-/* ===== SIDEBAR ===== */
-@media (max-width: 991px) {
-  .sidebar {
-    background: rgba(0, 0, 0, 0.72);
-    backdrop-filter: blur(14px);
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .nav-links {
-    gap: 8px;
-  }
-}
-
 /* ===== LANG SWITCH ===== */
+
 .lang-switch {
   display: flex;
   align-items: center;
@@ -250,6 +281,7 @@ const closeOffcanvas = () => {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   margin-left: auto;
 }
 
@@ -280,4 +312,112 @@ const closeOffcanvas = () => {
 .lang-divider {
   color: rgba(255, 255, 255, 0.4);
 }
+
+/* ===== SIDEBAR MOBILE/TABLET ===== */
+
+@media (max-width: 991px) {
+
+  .custom-navbar {
+    background: rgba(5, 6, 12, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.32),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  /* cuando el menú está abierto, reforzamos todavía más el fondo */
+  .custom-navbar:has(.offcanvas.show) {
+    background:
+      linear-gradient(180deg, rgba(7, 7, 13, 0.97) 0%, rgba(4, 4, 9, 0.94) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 14px 40px rgba(0, 0, 0, 0.42),
+      inset 0 -1px 0 rgba(109, 93, 246, 0.18);
+  }
+
+  .sidebar {
+    width: 100vw !important;
+    max-width: 100vw;
+    background:
+      linear-gradient(180deg, #07070d 0%, #040409 100%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-left: none;
+  }
+
+  .offcanvas-header {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 18px 20px;
+  }
+
+  .offcanvas-body {
+    min-height: calc(100vh - 78px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offcanvas-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(109, 93, 246, 0.14), transparent 28%),
+      radial-gradient(circle at 20% 70%, rgba(45, 140, 255, 0.1), transparent 30%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .offcanvas-body > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav-links {
+    gap: 18px;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.85rem;
+    width: fit-content;
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  .nav-link::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 70%;
+  }
+
+  .lang-switch.d-lg-none {
+    margin-left: 0;
+    align-self: center;
+    justify-content: center;
+    margin-top: 6px;
+  }
+}
+
 </style>
