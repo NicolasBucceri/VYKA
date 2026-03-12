@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vyka-studios.netlify.app/sitemap.xml

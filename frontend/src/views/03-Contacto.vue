@@ -9,10 +9,11 @@
         <header class="head" :class="{ in: inView }">
           <p class="eyebrow">{{ t("contact.eyebrow") }}</p>
 
-          <h2 class="headline">
+          <!-- H1 PRINCIPAL -->
+          <h1 class="headline">
             <span class="headline-white">{{ t("contact.title1") }}</span>
             <span class="headline-grad">{{ t("contact.title2") }}</span>
-          </h2>
+          </h1>
 
           <p class="sub">
             {{ t("contact.subtitle") }}
@@ -26,9 +27,10 @@
 
             <p class="kicker">{{ t("contact.direct") }}</p>
 
-            <h3 class="title">
+            <!-- H2 -->
+            <h2 class="title">
               {{ t("contact.whatsappTitle") }}
-            </h3>
+            </h2>
 
             <p class="desc">
               {{ t("contact.desc") }}
@@ -36,11 +38,14 @@
             </p>
 
             <div class="actions">
+              <!-- WHATSAPP -->
               <a
                 class="action primary"
                 href="#"
                 @click.prevent="abrirWhatsapp"
                 rel="noopener noreferrer"
+                aria-label="Contactar por WhatsApp"
+                title="Contactar por WhatsApp"
               >
                 <span class="action-shine" aria-hidden="true"></span>
 
@@ -58,6 +63,7 @@
                 </span>
               </a>
 
+              <!-- UBICACION -->
               <div class="action">
                 <span class="ico">
                   <i class="fa-solid fa-location-dot"></i>
@@ -69,7 +75,13 @@
                 </span>
               </div>
 
-              <a class="action" :href="mailLink">
+              <!-- EMAIL -->
+              <a
+                class="action"
+                :href="mailLink"
+                aria-label="Enviar email a VYKA Studio"
+                title="Enviar email"
+              >
                 <span class="ico">
                   <i class="fa-solid fa-envelope"></i>
                 </span>
@@ -85,11 +97,13 @@
               </a>
             </div>
 
+            <!-- MAPA -->
             <div class="mapBox">
               <iframe
                 class="mapFrame"
                 src="https://www.google.com/maps?q=Devoto%20CABA%20Buenos%20Aires&output=embed"
                 loading="lazy"
+                title="Ubicación de VYKA Studio en Devoto, Buenos Aires"
               ></iframe>
 
               <div class="mapOverlay">
@@ -103,6 +117,7 @@
                   href="https://www.google.com/maps?q=Devoto%20CABA%20Buenos%20Aires"
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="Abrir ubicación en Google Maps"
                 >
                   {{ t("contact.openMaps") }}
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -110,7 +125,12 @@
               </div>
             </div>
 
-            <button class="cta" @click="abrirWhatsapp">
+            <!-- CTA -->
+            <button
+              class="cta"
+              @click="abrirWhatsapp"
+              aria-label="Iniciar conversación por WhatsApp"
+            >
               <span>{{ t("contact.cta") }}</span>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
