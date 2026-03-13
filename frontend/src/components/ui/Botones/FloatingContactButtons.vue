@@ -1,24 +1,14 @@
 <template>
   <div class="contact-float">
-    <a
-      href="https://www.instagram.com/tuusuario"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn-float instagram"
-      aria-label="Instagram"
-    >
+    <a href="https://www.instagram.com/vyka.studios" target="_blank" rel="noopener noreferrer" class="btn-float instagram"
+      aria-label="Instagram">
       <span class="btn-ring"></span>
       <span class="btn-glow"></span>
       <i class="fa-brands fa-instagram"></i>
     </a>
 
-    <a
-      href="https://wa.me/5491135626449"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn-float whatsapp"
-      aria-label="WhatsApp"
-    >
+    <a href="https://wa.me/5491126154277" target="_blank" rel="noopener noreferrer" class="btn-float whatsapp"
+      aria-label="WhatsApp">
       <span class="btn-ring"></span>
       <span class="btn-glow"></span>
       <i class="fa-brands fa-whatsapp"></i>
@@ -59,7 +49,7 @@
   isolation: isolate;
 
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.015)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.015)),
     rgba(12, 12, 17, 0.76);
 
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -69,7 +59,7 @@
 
   box-shadow:
     0 16px 38px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 
   transition:
     transform 0.32s ease,
@@ -82,7 +72,7 @@
   position: relative;
   z-index: 3;
   font-size: 1.4rem;
-  color: rgba(255,255,255,0.94);
+  color: rgba(255, 255, 255, 0.94);
   transition:
     transform 0.32s ease,
     color 0.32s ease,
@@ -97,13 +87,11 @@
   z-index: 1;
 
   background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,0.14),
-      rgba(255,255,255,0.02) 35%,
+    linear-gradient(145deg,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0.02) 35%,
       rgba(109, 93, 246, 0.22) 65%,
-      rgba(45, 140, 255, 0.18)
-    );
+      rgba(45, 140, 255, 0.18));
 
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -143,13 +131,13 @@
   letter-spacing: 0.02em;
   white-space: nowrap;
 
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
   background: rgba(12, 12, 17, 0.88);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   box-shadow:
-    0 10px 24px rgba(0,0,0,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.04);
+    0 10px 24px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
   opacity: 0;
   visibility: hidden;
@@ -180,16 +168,16 @@
   pointer-events: none;
 
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.008));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.008));
 }
 
 .btn-float:hover {
   transform: translateY(-5px) scale(1.03);
-  border-color: rgba(255,255,255,0.14);
+  border-color: rgba(255, 255, 255, 0.14);
   box-shadow:
     0 24px 52px rgba(0, 0, 0, 0.42),
     0 0 24px rgba(109, 93, 246, 0.08),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .btn-float:hover i {

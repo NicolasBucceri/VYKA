@@ -17,6 +17,7 @@
     "titleAccent": "GROWTH OF YOUR BUSINESS",
     "cta": "Let’s talk about your project"
   },
+
   "intro": {
   "eyebrow": "INTRO",
   "title": "QUALITY IS DESIGNED FROM THE BEGINNING",
@@ -28,6 +29,7 @@
   "ariaMetodo": "Discover the method",
   "ariaProyectos": "View projects"
  },
+
  "metodo": {
   "aria": "Our workflow method",
   "title": "OUR WORKFLOW METHOD",
@@ -38,32 +40,27 @@
       "title": "Initial diagnosis",
       "text": "We analyze your business and needs.",
       "mediaFoot": "Initial analysis."
-    },
-    {
+    }, {
       "label": "STEP 2",
       "title": "Strategy",
       "text": "We define structure and objectives.",
       "mediaFoot": "UX strategy."
-    },
-    {
+    }, {
       "label": "STEP 3",
       "title": "UX/UI Design",
       "text": "We craft a clear, modern interface.",
       "mediaFoot": "Visual design."
-    },
-    {
+    }, {
       "label": "STEP 4",
       "title": "Development",
       "text": "We build an optimized solution.",
       "mediaFoot": "Clean code."
-    },
-    {
+    }, {
       "label": "STEP 5",
       "title": "Optimization",
       "text": "We refine performance and SEO.",
       "mediaFoot": "Optimization."
-    },
-    {
+    }, {
       "label": "STEP 6",
       "title": "Launch",
       "text": "We publish and monitor results.",
@@ -71,10 +68,10 @@
     }
   ]
  },
+
  "faq": {
   "titleLine": "Everything you need to know",
   "titleAccent": "before we start",
-
   "subAccent": "How we work, timelines, and what each VYKA plan includes.",
   "subRest": " Full transparency for your next digital project.",
 
@@ -82,16 +79,13 @@
     {
       "title": "Is the payment one-time or monthly?",
       "content": "It’s a one-time payment for the initial development. Once the project is delivered, the site is yours with no mandatory monthly fees. You only pay for what you need, when you need it."
-    },
-    {
+    }, {
       "title": "Can I upgrade my plan later?",
       "content": "Yes. You can start with one plan and upgrade when your business requires it. The structure is prepared to scale without rebuilding everything from scratch."
-    },
-    {
+    }, {
       "title": "What’s the delivery time?",
       "content": "It depends on scope and plan, but we typically deliver within 7 to 20 business days. We confirm a clear timeline before starting."
-    },
-    {
+    }, {
       "title": "Do I get post-delivery support?",
       "content": "Yes. We include post-delivery support for initial tweaks and questions. If you later want ongoing maintenance or improvements, we can offer it as an optional plan."
     }
@@ -105,6 +99,7 @@
     "btnSecondary": "Contact support"
   }
  },
+
  "proyectosHome": {
   "aria": "Selected projects",
   "kicker": "SELECTED PROJECTS",
@@ -131,6 +126,7 @@
     }
   }
  },
+
  "nosotros": {
   "ctaBanner": {
     "aria": "Start diagnosis",
@@ -139,14 +135,14 @@
     "button": "Start diagnosis"
   }
  },
+
  "nosotrosCard": {
   "kicker": "ABOUT US",
-"title": {
+  "title": {
   "line1": "A REAL TEAM,",
   "line2": "A TRANSPARENT",
   "line3": "PROCESS."
-},
-  "text": {
+}, "text": {
     "p1a": "At",
     "brand": "VYKA",
     "p1b": "we design and build digital solutions focused on real results.",
@@ -154,12 +150,14 @@
   },
   "button": "Learn more"
  },
+
  "planes": {
   "title": "What",
   "titleAccent": "services",
   "titleEnd": "do we offer?",
   "nota": "One-time investment · Your site, your control",
   "btnMas": "Learn more",
+  "desde": "From",
   "items": [
     {
       "plan": 1,
@@ -173,8 +171,7 @@
         "Mobile-optimized responsive layout",
         "WhatsApp and social media integration"
       ]
-    },
-    {
+    }, {
       "plan": 2,
       "slug": "diseno-web-profesional",
       "titulo": "Professional Web Design",
@@ -187,8 +184,7 @@
         "Forms and lead generation setup",
         "Optimized structural SEO"
       ]
-    },
-    {
+    }, {
       "plan": 3,
       "slug": "ecommerce-profesional",
       "titulo": "Professional E-commerce",
@@ -200,8 +196,7 @@
         "Integrated payments and shipping",
         "Product and order management"
       ]
-    },
-    {
+    }, {
       "plan": 4,
       "slug": "corporativo-sistemas-a-medida",
       "titulo": "Corporate & Custom Systems",
@@ -213,8 +208,7 @@
         "User and permission management",
         "Scalable architecture ready to grow"
       ]
-    },
-    {
+    }, {
       "plan": 5,
       "slug": "rediseno-rehacer-web",
       "titulo": "Web Redesign & Optimization",
@@ -229,85 +223,6 @@
     }
   ]
  },
- "planes": {
-  "title": "What",
-  "titleAccent": "services",
-  "titleEnd": "do we offer?",
-  "nota": "One-time investment · Your site, your control",
-  "btnMas": "Learn more",
-  "planLabel": "Plan",
-  "desde": "From",
-  "monedaARS": "ARS",
-  "monedaUSD": "USD",
-  "items": [
-    {
-      "plan": 1,
-      "slug": "diseno-web-economico",
-      "titulo": "Affordable Web Design",
-      "precioARS": 350000,
-      "precioUSD": 350,
-      "features": [
-        "Custom professional website design",
-        "Up to 5 custom sections",
-        "Mobile-optimized responsive layout",
-        "WhatsApp and social media integration"
-      ]
-    },
-    {
-      "plan": 2,
-      "slug": "diseno-web-profesional",
-      "titulo": "Professional Web Design",
-      "precioARS": 550000,
-      "precioUSD": 550,
-      "recomendado": true,
-      "features": [
-        "Custom professional UX/UI design",
-        "Self-manageable CMS panel",
-        "Forms and lead generation setup",
-        "Optimized structural SEO"
-      ]
-    },
-    {
-      "plan": 3,
-      "slug": "ecommerce-profesional",
-      "titulo": "Professional E-commerce",
-      "precioARS": 850000,
-      "precioUSD": 850,
-      "features": [
-        "Self-manageable online store",
-        "Optimized cart and checkout flow",
-        "Integrated payments and shipping",
-        "Product and order management"
-      ]
-    },
-    {
-      "plan": 4,
-      "slug": "corporativo-sistemas-a-medida",
-      "titulo": "Corporate & Custom Systems",
-      "precioARS": 1800000,
-      "precioUSD": 1800,
-      "features": [
-        "Custom website and system development",
-        "Personalized admin panel",
-        "User and permission management",
-        "Scalable architecture ready to grow"
-      ]
-    },
-    {
-      "plan": 5,
-      "slug": "rediseno-rehacer-web",
-      "titulo": "Web Redesign & Optimization",
-      "precioARS": 450000,
-      "precioUSD": 450,
-      "features": [
-        "Full audit of your current website",
-        "Modern UX/UI redesign",
-        "Speed and SEO optimization",
-        "Secure content migration"
-      ]
-    }
-  ]
-},
 
 "planesDetalle": [
   {
@@ -1024,6 +939,17 @@
   "legal": "Legal",
   "privacy": "Privacy",
   "terms": "Terms"
+}, "projectsSection": {
+  "ariaLabel": "Featured VYKA projects",
+  "kicker": "FEATURED PROJECTS",
+  "title": "Our",
+  "titleAccent": "projects",
+  "triad": {
+    "strategy": "Strategy",
+    "design": "Design",
+    "development": "Development",
+    "results": "Results"
+  }
 }
 
 }

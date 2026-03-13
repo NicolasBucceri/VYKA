@@ -1,14 +1,7 @@
 <template>
   <div class="card" :class="{ recomendado }">
     <!-- VIDEO FONDO -->
-    <video
-      v-if="recomendado && video"
-      class="card-video"
-      autoplay
-      muted
-      loop
-      playsinline
-    >
+    <video v-if="recomendado && video" class="card-video" autoplay muted loop playsinline>
       <source :src="video" type="video/webm" />
     </video>
 
@@ -40,11 +33,11 @@
       </p>
 
       <!-- BOTON UI -->
-<router-link :to="`/planes/${slug}`" class="card-btn-link">
-  <BotonSecundario class="card-btn">
-    {{ t("planes.btnMas") }}
-  </BotonSecundario>
-</router-link>
+      <router-link :to="`/planes/${slug}`" class="card-btn-link">
+        <BotonSecundario class="card-btn">
+          {{ t("planes.btnMas") }}
+        </BotonSecundario>
+      </router-link>
     </div>
   </div>
 </template>

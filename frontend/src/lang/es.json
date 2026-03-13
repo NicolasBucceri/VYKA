@@ -155,12 +155,14 @@
   },
   "button": "Saber más"
  },
- "planes": {
+"planes": {
   "title": "¿Qué",
   "titleAccent": "servicios",
   "titleEnd": "ofrecemos?",
   "nota": "Inversión única · Tu sitio, tu control",
   "btnMas": "Saber más",
+  "desde": "Desde",
+
   "items": [
     {
       "plan": 1,
@@ -938,6 +940,17 @@
   "legal": "Legal",
   "privacy": "Privacidad",
   "terms": "Términos"
+}, "projectsSection": {
+  "ariaLabel": "Proyectos destacados de VYKA",
+  "kicker": "PROYECTOS DESTACADOS",
+  "title": "Nuestros",
+  "titleAccent": "proyectos",
+  "triad": {
+    "strategy": "Estrategia",
+    "design": "Diseño",
+    "development": "Desarrollo",
+    "results": "Resultados"
+  }
 }
 
 

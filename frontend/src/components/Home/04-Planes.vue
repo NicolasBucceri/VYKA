@@ -11,18 +11,9 @@
 
       <!-- GRID -->
       <div class="planes-grid">
-<CardPlan
-  v-for="plan in planes"
-  :key="plan.plan"
-  :plan="plan.plan"
-  :slug="plan.slug"
-  :titulo="plan.titulo"
-  :precio="formatearPrecio(plan)"
-  :moneda="moneda"
-  :features="plan.features"
-  :recomendado="plan.recomendado"
-  :video="plan.recomendado ? videoPlan : null"
-/>
+        <CardPlan v-for="plan in planes" :key="plan.plan" :plan="plan.plan" :slug="plan.slug" :titulo="plan.titulo"
+          :precio="formatearPrecio(plan)" :moneda="moneda" :features="plan.features" :recomendado="plan.recomendado"
+          :video="plan.recomendado ? videoPlan : null" />
       </div>
     </div>
   </section>
@@ -69,16 +60,12 @@ const formatearPrecio = (plan) => {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(
-      900px 500px at 0% 100%,
+    radial-gradient(900px 500px at 0% 100%,
       rgba(109, 93, 246, 0.2),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 100% 100%,
+      transparent 60%),
+    radial-gradient(900px 500px at 100% 100%,
       rgba(45, 140, 255, 0.12),
-      transparent 60%
-    );
+      transparent 60%);
 }
 
 .planes-inner {
@@ -113,7 +100,7 @@ const formatearPrecio = (plan) => {
 }
 
 /* centra la última card si queda sola */
-.planes-grid > *:last-child:nth-child(odd) {
+.planes-grid>*:last-child:nth-child(odd) {
   grid-column: span 2;
   justify-self: center;
   width: min(100%, 50%);
@@ -141,7 +128,7 @@ const formatearPrecio = (plan) => {
     gap: 18px;
   }
 
-  .planes-grid > *:last-child:nth-child(odd) {
+  .planes-grid>*:last-child:nth-child(odd) {
     grid-column: span 2;
     justify-self: center;
     width: min(100%, 48%);
@@ -175,7 +162,7 @@ const formatearPrecio = (plan) => {
     gap: 18px;
   }
 
-  .planes-grid > *:last-child:nth-child(odd) {
+  .planes-grid>*:last-child:nth-child(odd) {
     grid-column: auto;
     justify-self: stretch;
     width: 100%;
